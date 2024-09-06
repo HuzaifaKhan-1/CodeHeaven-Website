@@ -1172,3 +1172,138 @@ body {
       font-size: 13px;
   }
   
+
+
+
+
+
+  /* Mobile Header Adjustment */
+@media(max-width: 950px) {
+    header {
+        padding: 15px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .navlist {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navlist.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+    }
+
+    .navlist a {
+        margin: 10px 0;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+}
+
+/* Mobile Hero Section Adjustment */
+@media(max-width: 920px) {
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .hero-img {
+        margin: 20px auto;
+        height: auto;
+        width: 100%;
+    }
+}
+
+/* Mobile Font Size Adjustment */
+@media(max-width: 570px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text h5 {
+        font-size: 14px;
+    }
+
+    .hero-img {
+        height: 300px;
+        width: auto;
+    }
+}
+
+/* Mobile Container and Box Alignment */
+@media(max-width: 440px) {
+    .container-lang, .container-lang2 {
+        margin: 20px;
+    }
+
+    .container-heading, .container-heading2 {
+        font-size: 36px;
+    }
+
+    .box-container, .box-container2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box-css, .box-js, .box-py, .box-c1, .box-java, .box-php, .box-sql, .box-c2 {
+        width: 90%;
+        padding: 20px;
+        margin: 10px 0;
+    }
+
+    .box-css h3, .box-js h3, .box-py h3, .box-c1 h3, .box-java h3, .box-php h3, .box-sql h3, .box-c2 h3 {
+        font-size: 24px;
+    }
+
+    .box-css p, .box-js p, .box-py p, .box-c1 p, .box-java p, .box-php p, .box-sql p, .box-c2 p {
+        font-size: 14px;
+    }
+
+    .Btn-css, .Btn-js, .Btn-py, .Btn-c1, .Btn-java, .Btn-php, .Btn-sql, .Btn-c2 {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
+
+/* Mobile Footer Adjustment */
+@media(max-width: 950px) {
+    footer {
+        padding: 20px 5%;
+        text-align: center;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content a {
+        margin-bottom: 10px;
+    }
+
+    .footer-content p {
+        font-size: 14px;
+    }
+}
