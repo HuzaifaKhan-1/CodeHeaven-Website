@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics - CodeHeaven</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #23aacf;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #f4f4f4;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #61dafb;
+            color: #333;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        aside {
+            width: 20%;
+            background-color: #444;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        aside ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 10px;
+        }
+
+        aside ul li a {
+            text-emphasis: none;
+            font-size: 20px;
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        aside ul li a:hover {
+            color: #61dafb;
+        }
+
+        main {
+            width: 80%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .code-example {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+        }
+
+        .code-example pre {
+            margin: 0;
+            color: #333;
+        }
+
+        .code-runner {
+            margin-top: 20px;
+        }
+
+        .code-runner textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        .code-runner button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #61dafb;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .code-runner button:hover {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            min-height: 30px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            white-space: pre-wrap;
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JavaScript Basics - CodeHeaven</h1>
+    </header>
+    <nav>
+        <a href="#variables">Variables</a>
+        <a href="#data-types">Data Types</a>
+        <a href="#functions">Functions</a>
+        <a href="#conditions">Conditions</a>
+        <a href="#loops">Loops</a>
+        <a href="#events">Events</a>
+        <a href="#objects">Objects</a>
+        <a href="#arrays">Arrays</a>
+        <a href="#dom">DOM Manipulation</a>
+        <a href="#json">JSON</a>
+        <a href="#fetch">Fetch API</a>
+    </nav>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#data-types">Data Types</a></li>
+                <li><a href="#functions">Functions</a></li>
+                <li><a href="#conditions">Conditions</a></li>
+                <li><a href="#loops">Loops</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#objects">Objects</a></li>
+                <li><a href="#arrays">Arrays</a></li>
+                <li><a href="#dom">DOM Manipulation</a></li>
+                <li><a href="#json">JSON</a></li>
+                <li><a href="#fetch">Fetch API</a></li>
+            </ul>
+        </aside>
+        <main>
+            <!-- Example Section with Code Runner -->
+            <section id="variables" class="section">
+                <h1>JavaScript Variables</h1>
+                <p>JavaScript variables are used to store data values. You can declare variables using <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+                <div class="code-example">
+                    <pre>
+let name = "John";
+const age = 30;
+var city = "New York";
+                    </pre>
+                </div>
+
+                <!-- Code Runner Section -->
+                <div class="code-runner">
+                    <h2>Try It Yourself:</h2>
+                    <textarea id="variablesCode"></textarea>
+                    <button onclick="runCode('variablesCode', 'variablesOutput')">Run Code</button>
+                    <div id="variablesOutput" class="output"></div>
+                </div>
+            </section>
+
+            <!-- Repeat the code runner for each section -->
+
+            <section id="data-types" class="section">
+                <h1>JavaScript Data Types</h1>
+                <p>JavaScript has different data types including strings, numbers, booleans, objects, arrays, and more.</p>
+                <div class="code-example">
+                    <pre>
+let str = "Hello"; // String
+let num = 100; // Number
+let isTrue = true; // Boolean
+let person = { name: "Alice", age: 25 }; // Object
+let numbers = [1, 2, 3]; // Array
+                    </pre>
+                </div>
+
+                <div class="code-runner">
+                    <h2>Try It Yourself:</h2>
+                    <textarea id="dataTypesCode"></textarea>
+                    <button onclick="runCode('dataTypesCode', 'dataTypesOutput')">Run Code</button>
+                    <div id="dataTypesOutput" class="output"></div>
+                </div>
+            </section>
+
+            <section id="functions" class="section">
+                <h1>JavaScript Functions</h1>
+                <p>Functions in JavaScript allow you to encapsulate code into reusable blocks. Functions can be declared or defined as expressions.</p>
+                <div class="code-example">
+                    <pre>
+function greet(name) {
+    return "Hello, " + name;
+}
+const add = (a, b) => a + b;
+                    </pre>
+                </div>
+
+                <div class="code-runner">
+                    <h2>Try It Yourself:</h2>
+                    <textarea id="functionsCode"></textarea>
+                    <button onclick="runCode('functionsCode', 'functionsOutput')">Run Code</button>
+                    <div id="functionsOutput" class="output"></div>
+                </div>
+            </section>
+
+            <!-- Add other sections similarly -->
+
+            <section id="conditions" class="section">
+                <h1>JavaScript Conditions</h1>
+                <p>Conditional statements are used to perform different actions based on different conditions.</p>
+                <div class="code-example">
+                    <pre>
+if (age > 18) {
+    console.log("Adult");
+} else {
+    console.log("Not an Adult");
+}
+                    </pre>
+                </div>
+
+                <div class="code-runner">
+                    <h2>Try It Yourself:</h2>
+                    <textarea id="conditionsCode"></textarea>
+                    <button onclick="runCode('conditionsCode', 'conditionsOutput')">Run Code</button>
+                    <div id="conditionsOutput" class="output"></div>
+                </div>
+            </section>
+
+            <!-- Loops Section -->
+<section id="loops" class="section">
+    <h1>JavaScript Loops</h1>
+    <p>Loops are used to repeatedly run a block of code until a certain condition is met.</p>
+    <div class="code-example">
+        <pre>
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+let j = 0;
+while (j < 5) {
+    console.log(j);
+    j++;
+}
+        </pre>
+    </div>
+
+    <div class="code-runner">
+        <h2>Try It Yourself:</h2>
+        <textarea id="loopsCode"></textarea>
+        <button onclick="runCode('loopsCode', 'loopsOutput')">Run Code</button>
+        <div id="loopsOutput" class="output"></div>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section id="events" class="section">
+    <h1>JavaScript Events</h1>
+    <p>Events are actions that can be detected by JavaScript, such as clicks, key presses, or mouse movements.</p>
+    <div class="code-example">
+        <pre>
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button clicked!");
+});
+        </pre>
+    </div>
+
+    <div class="code-runner">
+        <h2>Try It Yourself:</h2>
+        <textarea id="eventsCode"></textarea>
+        <button onclick="runCode('eventsCode', 'eventsOutput')">Run Code</button>
+        <div id="eventsOutput" class="output"></div>
+    </div>
+</section>
+
+<!-- Objects Section -->
+<section id="objects" class="section">
+    <h1>JavaScript Objects</h1>
+    <p>Objects are collections of related data and functionalities. They are written as key-value pairs.</p>
+    <div class="code-example">
+        <pre>
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    greet: function() {
+        return "Hello, " + this.firstName;
+    }
+};
+
+console.log(person.greet());
+        </pre>
+    </div>
+
+    <div class="code-runner">
+        <h2>Try It Yourself:</h2>
+        <textarea id="objectsCode"></textarea>
+        <button onclick="runCode('objectsCode', 'objectsOutput')">Run Code</button>
+        <div id="objectsOutput" class="output"></div>
+    </div>
+</section>
+
+<!-- Arrays Section -->
+<section id="arrays" class="section">
+    <h1>JavaScript Arrays</h1>
+    <p>Arrays are used to store multiple values in a single variable. Each value in an array is called an element.</p>
+    <div class="code-example">
+        <pre>
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits[0]);
+
+fruits.push("Orange");
+console.log(fruits);
+        </pre>
+    </div>
+
+    <div class="code-runner">
+        <h2>Try It Yourself:</h2>
+        <textarea id="arraysCode"></textarea>
+        <button onclick="runCode('arraysCode', 'arraysOutput')">Run Code</button>
+        <div id="arraysOutput" class="output"></div>
+    </div>
+</section>
+
+<!-- DOM Manipulation Section -->
+<section id="dom" class="section">
+    <h1>JavaScript DOM Manipulation</h1>
+    <p>The Document Object Model (DOM) represents the structure of a web page. JavaScript can be used to manipulate the DOM to change content, structure, and styling.</p>
+    <div class="code-example">
+        <pre>
+document.getElementById("myElement").innerText = "New Content";
+document.getElementById("myElement").style.color = "blue";
+        </pre>
+    </div>
+
+    <div class="code-runner">
+        <h2>Try It Yourself:</h2>
+        <textarea id="domCode"></textarea>
+        <button onclick="runCode('domCode', 'domOutput')">Run Code</button>
+        <div id="domOutput" class="output"></div>
+    </div>
+</section>
+
+<!-- JSON Section -->
+<section id="json" class="section">
+    <h1>JavaScript JSON</h1>
+    <p>JSON (JavaScript Object Notation) is a format for storing and transporting data. It is often used when data is sent from a server to a web page.</p>
+    <div class="code-example">
+        <pre>
+let jsonString = '{"name": "John", "age": 30}';
+let user = JSON.parse(jsonString);
+
+console.log(user.name);
+        </pre>
+    </div>
+
+    <div class="code-runner">
+        <h2>Try It Yourself:</h2>
+        <textarea id="jsonCode"></textarea>
+        <button onclick="runCode('jsonCode', 'jsonOutput')">Run Code</button>
+        <div id="jsonOutput" class="output"></div>
+    </div>
+</section>
+
+<!-- Fetch API Section -->
+<section id="fetch" class="section">
+    <h1>JavaScript Fetch API</h1>
+    <p>The Fetch API is used to make network requests to retrieve resources from a server.</p>
+    <div class="code-example">
+        <pre>
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+        </pre>
+    </div>
+
+    <div class="code-runner">
+        <h2>Try It Yourself:</h2>
+        <textarea id="fetchCode"></textarea>
+        <button onclick="runCode('fetchCode', 'fetchOutput')">Run Code</button>
+        <div id="fetchOutput" class="output"></div>
+    </div>
+</section>
+
+
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 CodeHeaven - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function runCode(inputId, outputId) {
+            const code = document.getElementById(inputId).value;
+            try {
+                const result = eval(code);
+                document.getElementById(outputId).innerText = result !== undefined ? result : "Code executed successfully.";
+            } catch (error) {
+                document.getElementById(outputId).innerText = "Error: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

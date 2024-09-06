@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor - CodeHeaven</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        #editor {
+            width: 50%;
+            height: 100%;
+            background-color: #1e1e1e;
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+        #output {
+            width: 50%;
+            height: 100%;
+            background-color: white;
+            border-left: 2px solid #ccc;
+            box-sizing: border-box;
+            
+        }
+        #runButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <textarea id="editor">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Example</title>
+</head>
+<body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+</body>
+</html>
+    </textarea>
+    <iframe id="output"></iframe>
+    <button id="runButton" onclick="runCode()">Run Code</button>
+
+    <script>
+        function runCode() {
+            const editorContent = document.getElementById('editor').value;
+            const outputFrame = document.getElementById('output');
+            outputFrame.contentWindow.document.open();
+            outputFrame.contentWindow.document.write(editorContent);
+            outputFrame.contentWindow.document.close();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Challenges - CodeHeaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+            color: #fff;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            padding: 20px;
+        }
+        .section {
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: slideUp 1s ease-out;
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .section h2 {
+            font-size: 28px;
+            margin-top: 0;
+            color: #ff6f61;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .challenges-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .challenge-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px;
+            flex: 1 1 calc(33.333% - 20px);
+            max-width: calc(33.333% - 20px);
+        }
+        .challenge-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .challenge-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .challenge-card .content {
+            padding: 15px;
+        }
+        .challenge-card h3 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .challenge-card p {
+            font-size: 16px;
+            color: #555;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background: #ff6f61;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            background: #e65c50;
+            transform: scale(1.05);
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 768px) {
+            .challenge-card {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .challenge-card img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Challenges</h1>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2>Welcome to CSS Challenges</h2>
+            <p>Enhance your CSS skills with these exciting and interactive challenges. Test your knowledge on layout techniques, animations, and advanced styling to create visually stunning web pages. Take on each challenge and see how creative you can get with CSS!</p>
+        </section>
+
+        <section class="section">
+            <h2>Featured Challenges</h2>
+            <div class="challenges-row">
+                <!-- Challenge 1 -->
+                <div class="challenge-card">
+                    <img src="https://mcconkey.media/wp-content/uploads/2013/08/Challenges-Ahead.jpg" alt="Advanced Layout Challenge">
+                    <div class="content">
+                        <h3>Advanced Layout Challenge</h3>
+                        <p>Create a complex layout using CSS Grid or Flexbox. Include multiple sections, cards, and responsive design elements to create a visually appealing and functional layout.</p>
+                        <a href="code-editor.html" class="cta-button">Try it Now</a>
+                    </div>
+                </div>
+                <!-- Challenge 2 -->
+                <div class="challenge-card">
+                    <img src="https://th.bing.com/th/id/OIP.ZHvbaApr5ZAl8SZHx0rJHwHaEy?rs=1&pid=ImgDetMain" alt="Animation Challenge">
+                    <div class="content">
+                        <h3>Animation Challenge</h3>
+                        <p>Design and implement CSS animations to create dynamic effects. Experiment with keyframes, transitions, and transforms to bring your web elements to life with smooth and engaging animations.</p>
+                        <a href="code-editor.html" class="cta-button">Try it Now</a>
+                    </div>
+                </div>
+                <!-- Challenge 3 -->
+                <div class="challenge-card">
+                    <img src="https://th.bing.com/th/id/OIP.E_f8f8Q-ERGgh-2zJGvSNQHaEo?rs=1&pid=ImgDetMain" alt="Responsive Design Challenge">
+                    <div class="content">
+                        <h3>Responsive Design Challenge</h3>
+                        <p>Develop a responsive web page that adapts to different screen sizes. Use media queries to adjust layouts, font sizes, and element positioning to ensure a seamless experience on all devices.</p>
+                        <a href="code-editor.html" class="cta-button">Try it Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CodeHeaven. All rights reserved.</p>
+    </footer>
+</body>
+</html>

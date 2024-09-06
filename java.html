@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Tutorial - CodeHeaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 230px;
+            background-color: #333;
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: calc(100% - 260px);
+            overflow-y: auto;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+            transform: translateY(20);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        section p, section ul, section ol, section pre {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Learn Java</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#datatypes">Data Types</a></li>
+            <li><a href="#operators">Operators</a></li>
+            <li><a href="#controlflow">Control Flow</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#classes-objects">Classes & Objects</a></li>
+            <li><a href="#constructors">Constructors</a></li>
+            <li><a href="#inheritance">Inheritance</a></li>
+            <li><a href="#polymorphism">Polymorphism</a></li>
+            <li><a href="#abstraction">Abstraction</a></li>
+            <li><a href="#encapsulation">Encapsulation</a></li>
+            <li><a href="#interfaces">Interfaces</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#exception-handling">Exception Handling</a></li>
+            <li><a href="#file-handling">File Handling</a></li>
+            <li><a href="#collections">Collections Framework</a></li>
+            <li><a href="#generics">Generics</a></li>
+            <li><a href="#multithreading">Multithreading</a></li>
+            <li><a href="#streams">Streams & File I/O</a></li>
+            <li><a href="#lambda-expressions">Lambda Expressions</a></li>
+            <li><a href="#annotations">Annotations</a></li>
+            <li><a href="#junit">JUnit Testing</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1>Welcome to the Java Tutorial - CodeHeaven</h1>
+            <p>Learn Java from the basics to advanced concepts.</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="visible">
+            <h2>Introduction to Java</h2>
+            <p>Java is a versatile and powerful programming language widely used for developing mobile applications, web applications, enterprise software, and more.</p>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation">
+            <h2>Java Installation</h2>
+            <p>Java can be installed by downloading the JDK (Java Development Kit) from Oracle's website.</p>
+            <ol>
+                <li>Download the JDK from the official website.</li>
+                <li>Install the JDK and set up the JAVA_HOME environment variable.</li>
+                <li>Use an IDE like IntelliJ IDEA, Eclipse, or a text editor like VSCode.</li>
+            </ol>
+        </section>
+
+        <!-- Syntax Section -->
+        <section id="syntax">
+            <h2>Java Syntax</h2>
+            <p>Java syntax is influenced by C and C++, but it has a simpler object model and fewer low-level facilities.</p>
+            <pre><code>
+// Java Syntax Example
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, CodeHeaven!");
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables">
+            <h2>Variables in Java</h2>
+            <p>Variables in Java are declared with a specific data type.</p>
+            <pre><code>
+// Variables Example
+int x = 10;
+String y = "CodeHeaven";
+double z = 3.14;
+            </code></pre>
+        </section>
+
+        <!-- Data Types Section -->
+        <section id="datatypes">
+            <h2>Java Data Types</h2>
+            <p>Java supports various data types such as integers, floating-point numbers, characters, and more.</p>
+            <ul>
+                <li><b>int:</b> Integer numbers</li>
+                <li><b>float:</b> Floating-point numbers</li>
+                <li><b>char:</b> Single character</li>
+                <li><b>String:</b> Textual data</li>
+            </ul>
+        </section>
+
+        <!-- Operators Section -->
+        <section id="operators">
+            <h2>Java Operators</h2>
+            <p>Operators in Java are special symbols used to perform operations on variables and values.</p>
+            <ul>
+                <li><b>Arithmetic Operators:</b> +, -, *, /, %</li>
+                <li><b>Relational Operators:</b> ==, !=, >, <, >=, <=</li>
+                <li><b>Logical Operators:</b> &&, ||, !</li>
+                <li><b>Assignment Operators:</b> =, +=, -=, *=, /=, %=</li>
+                <li><b>Unary Operators:</b> ++, --</li>
+            </ul>
+        </section>
+
+        <!-- Control Flow Section -->
+        <section id="controlflow">
+            <h2>Java Control Flow Statements</h2>
+            <p>Control flow statements in Java determine the order in which the code is executed.</p>
+            <ul>
+                <li><b>if-else:</b> Conditional branching</li>
+                <li><b>switch-case:</b> Multi-way branching</li>
+            </ul>
+        </section>
+
+        <!-- Loops Section -->
+        <section id="loops">
+            <h2>Loops in Java</h2>
+            <p>Loops allow you to repeatedly execute a block of code as long as a condition is true.</p>
+            <ul>
+                <li><b>for:</b> Used when the number of iterations is known</li>
+                <li><b>while:</b> Used when the number of iterations is unknown</li>
+                <li><b>do-while:</b> Executes at least once, then checks the condition</li>
+            </ul>
+        </section>
+
+        <!-- Methods Section -->
+        <section id="methods">
+            <h2>Methods in Java</h2>
+            <p>Methods are blocks of code that perform a specific task. They can accept parameters and return values.</p>
+            <pre><code>
+// Method Example
+public static int add(int a, int b) {
+    return a + b;
+}
+            </code></pre>
+        </section>
+
+        <!-- Classes & Objects Section -->
+        <section id="classes-objects">
+            <h2>Classes & Objects in Java</h2>
+            <p>Classes are blueprints for creating objects. Objects are instances of classes.</p>
+            <pre><code>
+// Class & Object Example
+class Car {
+    String model;
+    int year;
+
+    void display() {
+        System.out.println("Model: " + model + ", Year: " + year);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        myCar.model = "Tesla";
+        myCar.year = 2024;
+        myCar.display();
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Constructors Section -->
+        <section id="constructors">
+            <h2>Constructors in Java</h2>
+            <p>Constructors are special methods used to initialize objects. They have the same name as the class and no return type.</p>
+            <pre><code>
+// Constructor Example
+class Dog {
+    String breed;
+
+    // Constructor
+    Dog(String breed) {
+        this.breed = breed;
+    }
+
+    void display() {
+        System.out.println("Breed: " + breed);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog("Bulldog");
+        myDog.display();
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Inheritance Section -->
+        <section id="inheritance">
+            <h2>Inheritance in Java</h2>
+            <p>Inheritance allows one class to inherit properties and methods from another class.</p>
+            <pre><code>
+// Inheritance Example
+class Animal {
+    void makeSound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.makeSound();
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Polymorphism Section -->
+        <section id="polymorphism">
+            <h2>Polymorphism in Java</h2>
+            <p>Polymorphism allows methods to perform different tasks based on the object that is invoking them.</p>
+            <pre><code>
+// Polymorphism Example
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal = new Cat();
+        animal.sound();  // Output: Meow
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Abstraction Section -->
+        <section id="abstraction">
+            <h2>Abstraction in Java</h2>
+            <p>Abstraction is the concept of hiding the implementation details and showing only the essential features.</p>
+            <pre><code>
+// Abstraction Example
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape = new Circle();
+        shape.draw();
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Encapsulation Section -->
+        <section id="encapsulation">
+            <h2>Encapsulation in Java</h2>
+            <p>Encapsulation is the concept of wrapping data and code together into a single unit, typically using access modifiers like private, public, etc.</p>
+            <pre><code>
+// Encapsulation Example
+class Student {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.setName("Huzaifa");
+        System.out.println(student.getName());
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Interfaces Section -->
+        <section id="interfaces">
+            <h2>Interfaces in Java</h2>
+            <p>Interfaces are used to achieve abstraction and multiple inheritance in Java.</p>
+            <pre><code>
+// Interface Example
+interface Animal {
+    void sound();
+}
+
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound();
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="packages">
+            <h2>Packages in Java</h2>
+            <p>Packages are used to group related classes and interfaces together.</p>
+            <pre><code>
+// Package Example
+package com.codeheaven;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Welcome to CodeHeaven");
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Exception Handling Section -->
+        <section id="exception-handling">
+            <h2>Exception Handling in Java</h2>
+            <p>Exception handling in Java is done using try, catch, and finally blocks.</p>
+            <pre><code>
+// Exception Handling Example
+public class Main {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        } finally {
+            System.out.println("Execution completed");
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- File Handling Section -->
+        <section id="file-handling">
+            <h2>File Handling in Java</h2>
+            <p>Java provides classes like File, FileReader, and FileWriter to handle files.</p>
+            <pre><code>
+// File Handling Example
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            File file = new File("example.txt");
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            }
+            FileWriter writer = new FileWriter(file);
+            writer.write("Welcome to CodeHeaven");
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Collections Framework Section -->
+        <section id="collections">
+            <h2>Collections Framework in Java</h2>
+            <p>The Collections Framework provides a unified architecture for storing and manipulating collections of objects.</p>
+            <pre><code>
+// Collections Example
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+
+        for (String language : list) {
+            System.out.println(language);
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Generics Section -->
+        <section id="generics">
+            <h2>Generics in Java</h2>
+            <p>Generics allow types to be parameters when defining classes, interfaces, and methods.</p>
+            <pre><code>
+// Generics Example
+class Box<T> {
+    private T value;
+
+    public void set(T value) {
+        this.value = value;
+    }
+
+    public T get() {
+        return value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Box<Integer> integerBox = new Box<>();
+        integerBox.set(10);
+        System.out.println(integerBox.get());
+
+        Box<String> stringBox = new Box<>();
+        stringBox.set("CodeHeaven");
+        System.out.println(stringBox.get());
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Multithreading Section -->
+        <section id="multithreading">
+            <h2>Multithreading in Java</h2>
+            <p>Multithreading allows multiple threads to run concurrently.</p>
+            <pre><code>
+// Multithreading Example
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start();
+    }
+}
+            </code></pre>
+        </section>
+        <section id="streams">
+            <h2>Streams & File I/O</h2>
+            <p>Java provides the Streams API to perform input and output operations. This API includes classes and interfaces for reading and writing data to files and other I/O sources.</p>
+            <pre><code>
+        // Streams & File I/O Example
+        try (BufferedReader reader = new BufferedReader(new FileReader("input.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+            </code></pre>
+        </section>
+        
+        <section id="lambda-expressions">
+            <h2>Lambda Expressions</h2>
+            <p>Lambda expressions provide a clear and concise way to represent one method interface using an expression. They are commonly used in functional programming and stream operations.</p>
+            <pre><code>
+        // Lambda Expressions Example
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+        numbers.forEach(n -> System.out.println(n));
+            </code></pre>
+        </section>
+        
+        <section id="annotations">
+            <h2>Annotations</h2>
+            <p>Annotations in Java are a form of metadata that provides data about a program, but are not part of the program itself. They have no direct effect on the operation of the code they annotate.</p>
+            <pre><code>
+        // Annotations Example
+        @Override
+        public String toString() {
+            return "CodeHeaven";
+        }
+            </code></pre>
+        </section>
+        
+        <section id="junit">
+            <h2>JUnit Testing</h2>
+            <p>JUnit is a framework for writing and running unit tests in Java. It is used to ensure that individual units of source code work as intended.</p>
+            <pre><code>
+        // JUnit Testing Example
+        import org.junit.jupiter.api.Test;
+        import static org.junit.jupiter.api.Assertions.assertEquals;
+        
+        public class CalculatorTest {
+            @Test
+            public void testAdd() {
+                Calculator calc = new Calculator();
+                assertEquals(5, calc.add(2, 3));
+            }
+        }
+            </code></pre>
+        </section>
+        
+
+        <!-- Exercises Section -->
+<section id="exercises">
+    <h2>Java Exercises</h2>
+    <p>Practice your Java skills with these exercises.</p>
+
+    <!-- Control Flow Exercises -->
+    <div class="exercise">
+        <h3>Control Flow Statements</h3>
+        <ul>
+            <li>Write a program to check if a number is positive, negative, or zero using an <code>if-else</code> statement.</li>
+            <li>Create a program that uses a <code>switch-case</code> to print the name of a day based on the day number.</li>
+        </ul>
+    </div>
+
+    <!-- Loops Exercises -->
+    <div class="exercise">
+        <h3>Loops</h3>
+        <ul>
+            <li>Write a <code>for</code> loop to print the first 10 natural numbers.</li>
+            <li>Create a program using a <code>while</code> loop to find the sum of digits of a given number.</li>
+            <li>Write a <code>do-while</code> loop that prints numbers from 1 to 5.</li>
+        </ul>
+    </div>
+
+    <!-- Methods Exercises -->
+    <div class="exercise">
+        <h3>Methods</h3>
+        <ul>
+            <li>Write a method that takes two integers as parameters and returns their product.</li>
+            <li>Create a program with a method that checks if a number is prime.</li>
+        </ul>
+    </div>
+
+    <!-- Classes & Objects Exercises -->
+    <div class="exercise">
+        <h3>Classes & Objects</h3>
+        <ul>
+            <li>Create a class <code>Rectangle</code> with attributes length and width, and a method to calculate the area.</li>
+            <li>Write a program that creates multiple objects of a class <code>Student</code> and displays their details.</li>
+        </ul>
+    </div>
+
+    <!-- Inheritance Exercises -->
+    <div class="exercise">
+        <h3>Inheritance</h3>
+        <ul>
+            <li>Create a base class <code>Vehicle</code> and a derived class <code>Car</code>. Demonstrate inheritance by accessing properties of <code>Vehicle</code> through <code>Car</code>.</li>
+        </ul>
+    </div>
+
+    <!-- Polymorphism Exercises -->
+    <div class="exercise">
+        <h3>Polymorphism</h3>
+        <ul>
+            <li>Implement method overriding in a base class <code>Animal</code> and a derived class <code>Bird</code>.</li>
+        </ul>
+    </div>
+
+    <!-- Abstraction Exercises -->
+    <div class="exercise">
+        <h3>Abstraction</h3>
+        <ul>
+            <li>Create an abstract class <code>Shape</code> with an abstract method <code>draw()</code>, and implement it in derived classes <code>Circle</code> and <code>Square</code>.</li>
+        </ul>
+    </div>
+
+    <!-- Encapsulation Exercises -->
+    <div class="exercise">
+        <h3>Encapsulation</h3>
+        <ul>
+            <li>Write a class <code>Person</code> with private fields for name and age. Use getter and setter methods to access and modify these fields.</li>
+        </ul>
+    </div>
+
+    <!-- Interfaces Exercises -->
+    <div class="exercise">
+        <h3>Interfaces</h3>
+        <ul>
+            <li>Create an interface <code>Animal</code> with a method <code>makeSound()</code>. Implement this interface in classes <code>Cat</code> and <code>Dog</code>.</li>
+        </ul>
+    </div>
+
+    <!-- Collections Framework Exercises -->
+    <div class="exercise">
+        <h3>Collections Framework</h3>
+        <ul>
+            <li>Write a program that uses an <code>ArrayList</code> to store a list of cities and prints them.</li>
+            <li>Create a <code>HashMap</code> to store and retrieve student names and their corresponding grades.</li>
+        </ul>
+    </div>
+
+    <!-- Exception Handling Exercises -->
+    <div class="exercise">
+        <h3>Exception Handling</h3>
+        <ul>
+            <li>Write a program that handles division by zero using a <code>try-catch</code> block.</li>
+            <li>Create a program that demonstrates the use of <code>finally</code> in exception handling.</li>
+        </ul>
+    </div>
+
+    <!-- Multithreading Exercises -->
+    <div class="exercise">
+        <h3>Multithreading</h3>
+        <ul>
+            <li>Write a program that creates two threads and makes them run concurrently.</li>
+        </ul>
+    </div>
+</section>
+
+
+        <!-- Conclusion Section -->
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>This guide covers essential Java concepts, providing a solid foundation for learning and mastering Java programming.</p>
+        </section>
+    </main>
+
+</body>
+
+</html>

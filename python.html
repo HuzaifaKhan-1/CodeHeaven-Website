@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tutorial - CodeHeaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 230px;
+            background-color: #333;
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: calc(100% - 260px);
+            overflow-y: auto;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        section p, section ul, section ol, section pre {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Learn Python</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#datatypes">Data Types</a></li>
+            <li><a href="#operators">Operators</a></li>
+            <li><a href="#controlflow">Control Flow</a></li>
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#libraries">Libraries</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#lists-tuples">Lists & Tuples</a></li>
+            <li><a href="#dictionaries-sets">Dictionaries & Sets</a></li>
+            <li><a href="#list-comprehensions">List Comprehensions</a></li>
+            <li><a href="#file-handling">File Handling</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1>Welcome to the Python Tutorial - CodeHeaven</h1>
+            <p>Learn Python from the basics to advanced concepts.</p>
+        </header>
+
+        <section id="introduction" class="visible">
+            <h2>Introduction to Python</h2>
+            <p>Python is a powerful programming language that is easy to learn...</p>
+        </section>
+
+           <!-- Installation Section -->
+           <section id="installation">
+            <h2>Python Installation</h2>
+            <p>Python can be installed from the official website. It's available for Windows, macOS, and Linux.</p>
+            <ol>
+                <li>Go to the <a href="https://www.python.org" target="_blank">official Python website</a>.</li>
+                <li>Download the latest version of Python.</li>
+                <li>Run the installer and follow the instructions.</li>
+                <li>Ensure you add Python to your PATH during installation.</li>
+            </ol>
+        </section>
+
+        <!-- Syntax Section -->
+        <section id="syntax">
+            <h2>Python Syntax</h2>
+            <p>Python syntax is designed to be clean and readable. Code blocks are defined by indentation rather than brackets or keywords.</p>
+            <pre><code>
+# Python Syntax Example
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("CodeHeaven")
+            </code></pre>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables">
+            <h2>Variables in Python</h2>
+            <p>Variables in Python are created by assigning a value to a name using the `=` operator.</p>
+            <pre><code>
+# Variables Example
+x = 10
+y = "CodeHeaven"
+z = 3.14
+            </code></pre>
+        </section>
+
+        <!-- Data Types Section -->
+        <section id="datatypes">
+            <h2>Python Data Types</h2>
+            <p>Python supports various data types such as integers, floating-point numbers, strings, lists, tuples, and dictionaries.</p>
+            <ul>
+                <li><b>int:</b> Integer numbers</li>
+                <li><b>float:</b> Floating-point numbers</li>
+                <li><b>str:</b> Textual data</li>
+                <li><b>list:</b> Ordered collection of items</li>
+                <li><b>tuple:</b> Immutable ordered collection of items</li>
+                <li><b>dict:</b> Key-value pairs</li>
+            </ul>
+        </section>
+
+        <!-- Operators Section -->
+        <section id="operators">
+            <h2>Python Operators</h2>
+            <p>Python supports various operators for arithmetic, comparison, logical operations, and more.</p>
+            <ul>
+                <li><b>Arithmetic Operators:</b> +, -, *, /, %</li>
+                <li><b>Comparison Operators:</b> ==, !=, >, <, >=, <=</li>
+                <li><b>Logical Operators:</b> and, or, not</li>
+            </ul>
+        </section>
+
+        <!-- Control Flow Section -->
+        <section id="controlflow">
+            <h2>Control Flow in Python</h2>
+            <p>Python supports control flow using `if`, `elif`, and `else` statements, as well as loops like `for` and `while`.</p>
+            <pre><code>
+# Control Flow Example
+age = 18
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+            </code></pre>
+        </section>
+
+        <!-- Functions Section -->
+        <section id="functions">
+            <h2>Python Functions</h2>
+            <p>Functions in Python are defined using the `def` keyword. They help to organize code into reusable blocks.</p>
+            <pre><code>
+# Function Example
+def add(a, b):
+    return a + b
+
+result = add(5, 10)
+print(result)
+            </code></pre>
+        </section>
+        <section id="libraries">
+            <h2>Popular Python Libraries</h2>
+            <p>Python has a rich ecosystem of libraries for various tasks. Some popular ones include:</p>
+            <ul>
+                <li><b>NumPy:</b> For numerical computations</li>
+                <li><b>Pandas:</b> For data manipulation and analysis</li>
+                <li><b>Matplotlib:</b> For data visualization</li>
+                <li><b>TensorFlow:</b> For machine learning</li>
+                <li><b>Requests:</b> For making HTTP requests</li>
+            </ul>
+        </section>
+ <!-- Loops Section -->
+<section id="loops">
+    <h2>Python Loops</h2>
+    <p>Loops in Python allow you to execute a block of code multiple times. Python supports different loop types like for loops and while loops.</p>
+    <pre><code>
+# Loops Example
+for i in range(5):
+    print(i)
+
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+    </code></pre>
+</section>
+
+<!-- Lists & Tuples Section -->
+<section id="lists-tuples">
+    <h2>Python Lists & Tuples</h2>
+    <p>Lists and tuples are both used to store collections of data. The main difference is that lists are mutable while tuples are immutable.</p>
+    <pre><code>
+# Lists & Tuples Example
+my_list = [1, 2, 3, 4]
+my_tuple = (1, 2, 3, 4)
+
+my_list[0] = 10  # Lists are mutable
+# my_tuple[0] = 10  # This would raise an error since tuples are immutable
+    </code></pre>
+</section>
+
+<!-- Dictionaries & Sets Section -->
+<section id="dictionaries-sets">
+    <h2>Python Dictionaries & Sets</h2>
+    <p>Dictionaries and sets are both used to store collections of data, but they work differently.</p>
+    <pre><code>
+# Dictionaries & Sets Example
+my_dict = {"name": "Alice", "age": 25}
+my_set = {1, 2, 3, 4}
+
+print(my_dict["name"])
+my_set.add(5)
+    </code></pre>
+</section>
+
+<!-- List Comprehensions Section -->
+<section id="list-comprehensions">
+    <h2>Python List Comprehensions</h2>
+    <p>List comprehensions provide a concise way to create lists based on existing lists or other iterables.</p>
+    <pre><code>
+# List Comprehension Example
+squares = [x**2 for x in range(10)]
+even_squares = [x**2 for x in range(10) if x % 2 == 0]
+    </code></pre>
+</section>
+
+<!-- File Handling Section -->
+<section id="file-handling">
+    <h2>Python File Handling</h2>
+    <p>File handling allows you to read, write, and manipulate files in Python.</p>
+    <pre><code>
+# File Handling Example
+with open("example.txt", "w") as file:
+    file.write("Hello, CodeHeaven!")
+
+with open("example.txt", "r") as file:
+    content = file.read()
+    print(content)
+    </code></pre>
+</section>
+
+<!-- Error Handling Section -->
+<section id="error-handling">
+    <h2>Python Error Handling</h2>
+    <p>Error handling in Python uses try-except blocks to manage exceptions and prevent crashes.</p>
+    <pre><code>
+# Error Handling Example
+try:
+    x = 1 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+finally:
+    print("This block always executes.")
+    </code></pre>
+</section>
+
+<!-- OOP Section -->
+<section id="oop">
+    <h2>Python Object-Oriented Programming (OOP)</h2>
+    <p>OOP in Python allows you to model real-world entities using classes and objects.</p>
+    <pre><code>
+# OOP Example
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        print(f"{self.name} says woof!")
+
+my_dog = Dog("Buddy", "Golden Retriever")
+my_dog.bark()
+    </code></pre>
+</section>
+
+<!-- Modules & Packages Section -->
+<section id="modules-packages">
+    <h2>Python Modules & Packages</h2>
+    <p>Modules and packages help you organize and reuse code across different projects.</p>
+    <pre><code>
+# Modules & Packages Example
+import math
+
+print(math.sqrt(16))
+    </code></pre>
+</section>
+
+<!-- Working with JSON Section -->
+<section id="working-with-json">
+    <h2>Working with JSON in Python</h2>
+    <p>JSON (JavaScript Object Notation) is a popular format for data exchange. Python provides built-in support for working with JSON.</p>
+    <pre><code>
+# JSON Example
+import json
+
+data = {"name": "CodeHeaven", "type": "website"}
+json_str = json.dumps(data)
+print(json_str)
+
+parsed_data = json.loads(json_str)
+print(parsed_data["name"])
+    </code></pre>
+</section>
+
+<!-- Python & Databases Section -->
+<section id="python-databases">
+    <h2>Python and Databases</h2>
+    <p>Python can interact with databases using libraries like SQLite, MySQL, and PostgreSQL.</p>
+    <pre><code>
+# Database Example with SQLite
+import sqlite3
+
+conn = sqlite3.connect("example.db")
+cursor = conn.cursor()
+cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)")
+cursor.execute("INSERT INTO users (name) VALUES ('Alice')")
+conn.commit()
+conn.close()
+    </code></pre>
+</section>
+
+<!-- Web Scraping Section -->
+<section id="web-scraping">
+    <h2>Python Web Scraping</h2>
+    <p>Web scraping involves extracting data from websites. Python libraries like BeautifulSoup and Scrapy make this process easier.</p>
+    <pre><code>
+# Web Scraping Example
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.example.com"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+print(soup.title.text)
+    </code></pre>
+</section>
+
+<!-- Data Visualization Section -->
+<section id="data-visualization">
+    <h2>Python Data Visualization</h2>
+    <p>Data visualization in Python is often done using libraries like Matplotlib, Seaborn, and Plotly.</p>
+    <pre><code>
+# Data Visualization Example
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+plt.plot(x, y)
+plt.xlabel("X axis")
+plt.ylabel("Y axis")
+plt.title("Simple Line Plot")
+plt.show()
+    </code></pre>
+</section>
+
+<!-- Python for Data Science Section -->
+<section id="python-data-science">
+    <h2>Python for Data Science</h2>
+    <p>Python is widely used in data science for data manipulation, analysis, and machine learning.</p>
+    <pre><code>
+# Data Science Example
+import pandas as pd
+
+data = {"Name": ["Alice", "Bob", "Charlie"], "Age": [25, 30, 35]}
+df = pd.DataFrame(data)
+print(df)
+    </code></pre>
+</section>
+
+        <!-- Exercises Section -->
+        <section id="exercises">
+            <h2>Practice Exercises</h2>
+            <p>Test your Python skills with the following exercises:</p>
+            <ol>
+                <li>Write a Python program to swap two variables.</li>
+                <li>Write a Python program to find the factorial of a number.</li>
+                <li>Create a Python program that counts the number of vowels in a string.</li>
+                <li>Write a Python program to check if a given number is prime.</li>
+                <li>Develop a Python program to find the largest element in a list.</li>
+                <li>Create a Python program to reverse a string without using built-in functions.</li>
+                <li>Write a Python program to calculate the sum of all numbers in a list.</li>
+                <li>Develop a Python program that checks whether a string is a palindrome.</li>
+                <li>Create a Python program to merge two dictionaries into one.</li>
+                <li>Write a Python program to generate the Fibonacci series up to a given number of terms.</li>
+                <li>Develop a Python program that finds the second largest number in a list.</li>
+                <li>Create a Python program to find the common elements between two lists.</li>
+                <li>Write a Python program to sort a list of tuples based on the second element.</li>
+                <li>Develop a Python program to convert a decimal number to binary, octal, and hexadecimal.</li>
+                <li>Create a Python program to count the frequency of each word in a given string.</li>
+            </ol>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 CodeHeaven. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript for Animation -->
+    <script>
+        // Animate sections on scroll
+        const sections = document.querySelectorAll('section');
+        const options = {
+            threshold: 0.1
+        };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

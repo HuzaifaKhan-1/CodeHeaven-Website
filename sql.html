@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Tutorial - CodeHeaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 230px;
+            background-color: #333;
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: calc(100% - 260px);
+            overflow-y: auto;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+            transform: translateY(20px);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        section p, section ul, section ol, section pre {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Learn SQL</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#queries">Basic Queries</a></li>
+            <li><a href="#joins">Joins</a></li>
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#subqueries">Subqueries</a></li>
+            <li><a href="#transactions">Transactions</a></li>
+            <li><a href="#indexes">Indexes</a></li>
+            <li><a href="#views">Views</a></li>
+            <li><a href="#stored-procedures">Stored Procedures</a></li>
+            <li><a href="#triggers">Triggers</a></li>
+            <li><a href="#normalization">Normalization</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#backup">Backup & Recovery</a></li>
+            <li><a href="#performance">Performance Tuning</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1>Welcome to the SQL Tutorial - CodeHeaven</h1>
+            <p>Learn SQL from the basics to advanced concepts.</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="visible">
+            <h2>Introduction to SQL</h2>
+            <p>SQL (Structured Query Language) is a standard language for managing and manipulating relational databases.</p>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation">
+            <h2>SQL Installation</h2>
+            <p>SQL databases can be managed using various database management systems (DBMS) such as MySQL, PostgreSQL, and SQLite.</p>
+            <ol>
+                <li>Download and install a DBMS like MySQL or PostgreSQL.</li>
+                <li>Set up a database server and client tools.</li>
+                <li>Start the DBMS service and connect using a client tool or command-line interface.</li>
+            </ol>
+        </section>
+
+        <!-- Syntax Section -->
+        <section id="syntax">
+            <h2>SQL Syntax</h2>
+            <p>SQL syntax is used to perform various operations on the database such as querying, updating, and managing data.</p>
+            <pre><code>
+-- SQL Syntax Example
+SELECT * FROM users;
+            </code></pre>
+        </section>
+
+        <!-- Basic Queries Section -->
+        <section id="queries">
+            <h2>Basic SQL Queries</h2>
+            <p>SQL queries are used to retrieve data from a database. The basic query is the SELECT statement.</p>
+            <pre><code>
+-- Basic Query Example
+SELECT first_name, last_name FROM employees WHERE department = 'Sales';
+            </code></pre>
+        </section>
+
+        <!-- Joins Section -->
+        <section id="joins">
+            <h2>SQL Joins</h2>
+            <p>Joins are used to combine rows from two or more tables based on a related column.</p>
+            <pre><code>
+-- Inner Join Example
+SELECT employees.first_name, departments.department_name
+FROM employees
+INNER JOIN departments ON employees.department_id = departments.id;
+            </code></pre>
+        </section>
+
+        <!-- Functions Section -->
+        <section id="functions">
+            <h2>SQL Functions</h2>
+            <p>SQL functions perform operations on data and return a result. Examples include aggregate functions and scalar functions.</p>
+            <pre><code>
+-- Aggregate Function Example
+SELECT COUNT(*) FROM employees;
+
+-- Scalar Function Example
+SELECT UPPER(first_name) FROM employees;
+            </code></pre>
+        </section>
+
+        <!-- Subqueries Section -->
+        <section id="subqueries">
+            <h2>SQL Subqueries</h2>
+            <p>Subqueries are queries nested inside another query. They can be used to perform more complex operations.</p>
+            <pre><code>
+-- Subquery Example
+SELECT first_name FROM employees
+WHERE department_id = (SELECT id FROM departments WHERE department_name = 'Sales');
+            </code></pre>
+        </section>
+
+        <!-- Transactions Section -->
+        <section id="transactions">
+            <h2>SQL Transactions</h2>
+            <p>Transactions ensure data integrity by allowing multiple operations to be performed as a single unit of work.</p>
+            <pre><code>
+-- Transaction Example
+START TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
+UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
+COMMIT;
+            </code></pre>
+        </section>
+
+        <!-- Indexes Section -->
+        <section id="indexes">
+            <h2>SQL Indexes</h2>
+            <p>Indexes improve the speed of data retrieval operations on a database table at the cost of additional space and maintenance overhead.</p>
+            <pre><code>
+-- Index Creation Example
+CREATE INDEX idx_last_name ON employees(last_name);
+            </code></pre>
+        </section>
+
+        <!-- Views Section -->
+        <section id="views">
+            <h2>SQL Views</h2>
+            <p>Views are virtual tables created by querying one or more tables. They can simplify complex queries.</p>
+            <pre><code>
+-- View Creation Example
+CREATE VIEW sales_view AS
+SELECT first_name, last_name FROM employees WHERE department = 'Sales';
+            </code></pre>
+        </section>
+
+        <!-- Stored Procedures Section -->
+        <section id="stored-procedures">
+            <h2>SQL Stored Procedures</h2>
+            <p>Stored procedures are precompiled collections of SQL statements stored in the database.</p>
+            <pre><code>
+-- Stored Procedure Example
+CREATE PROCEDURE GetEmployeeInfo(IN emp_id INT)
+BEGIN
+    SELECT * FROM employees WHERE id = emp_id;
+END;
+            </code></pre>
+        </section>
+
+        <!-- Triggers Section -->
+        <section id="triggers">
+            <h2>SQL Triggers</h2>
+            <p>Triggers are special types of stored procedures that automatically execute when certain events occur in the database.</p>
+            <pre><code>
+-- Trigger Example
+CREATE TRIGGER before_insert_employee
+BEFORE INSERT ON employees
+FOR EACH ROW
+BEGIN
+    SET NEW.created_at = NOW();
+END;
+            </code></pre>
+        </section>
+
+        <!-- Normalization Section -->
+        <section id="normalization">
+            <h2>Database Normalization</h2>
+            <p>Normalization is the process of organizing data to reduce redundancy and improve data integrity.</p>
+        </section>
+
+        <!-- Security Section -->
+        <section id="security">
+            <h2>SQL Security</h2>
+            <p>Database security involves protecting data from unauthorized access and ensuring data integrity.</p>
+        </section>
+
+        <!-- Backup & Recovery Section -->
+        <section id="backup">
+            <h2>Backup & Recovery</h2>
+            <p>Regular backups are essential for data recovery in case of hardware failure or data corruption.</p>
+        </section>
+
+        <!-- Performance Tuning Section -->
+        <section id="performance">
+            <h2>Performance Tuning</h2>
+            <p>Performance tuning involves optimizing SQL queries and database configurations to improve efficiency.</p>
+        </section>
+
+        <!-- Exercises Section -->
+        <section id="exercises">
+            <h2>SQL Exercises</h2>
+            <p>Practice your SQL skills with these exercises:</p>
+            <ul>
+                <li>Write a query to find the highest salary in the employees table.</li>
+                <li>Create a view that shows the average salary by department.</li>
+                <li>Write a stored procedure that updates the employee's department based on the given employee ID.</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 CodeHeaven. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add smooth scroll animation
+        document.querySelectorAll('.sidebar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation for sections
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('visible');
+            });
+        });
+    </script>
+</body>
+</html>

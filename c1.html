@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Tutorial - CodeHeaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 230px;
+            background-color: #333;
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: calc(100% - 260px);
+            overflow-y: auto;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+            transform: translateY(20);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        section p, section ul, section ol, section pre {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Learn C++</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#datatypes">Data Types</a></li>
+            <li><a href="#oop-exercises">* OOP - All Concepts</a></li>
+            <li><a href="#operators">Operators</a></li>
+            <li><a href="#controlflow">Control Flow</a></li>
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#classes-objects">Classes & Objects</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#arrays">Arrays</a></li>
+            <li><a href="#pointers">Pointers</a></li>
+            <li><a href="#file-handling">File Handling</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1>Welcome to the C++ Tutorial - CodeHeaven</h1>
+            <p>Learn C++ from the basics to advanced concepts.</p>
+        </header>
+
+        <section id="introduction" class="visible">
+            <h2>Introduction to C++</h2>
+            <p>C++ is a powerful general-purpose programming language. It is widely used for systems software, game development, and more.</p>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation">
+            <h2>C++ Installation</h2>
+            <p>C++ can be installed using various compilers like GCC, Clang, or IDEs like Visual Studio.</p>
+            <ol>
+                <li>Install a C++ compiler (e.g., GCC).</li>
+                <li>Set up an IDE or text editor of your choice (e.g., Visual Studio, Code::Blocks).</li>
+                <li>Write and compile your first C++ program.</li>
+            </ol>
+        </section>
+
+        <!-- Syntax Section -->
+        <section id="syntax">
+            <h2>C++ Syntax</h2>
+            <p>C++ syntax is influenced by the C language but introduces object-oriented features.</p>
+            <pre><code>
+// C++ Syntax Example
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, CodeHeaven!" << endl;
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables">
+            <h2>Variables in C++</h2>
+            <p>Variables in C++ are declared with a specific data type.</p>
+            <pre><code>
+// Variables Example
+int x = 10;
+string y = "CodeHeaven";
+double z = 3.14;
+            </code></pre>
+        </section>
+
+        <!-- Data Types Section -->
+        <section id="datatypes">
+            <h2>C++ Data Types</h2>
+            <p>C++ supports various data types such as integers, floating-point numbers, characters, and more.</p>
+            <ul>
+                <li><b>int:</b> Integer numbers</li>
+                <li><b>float:</b> Floating-point numbers</li>
+                <li><b>char:</b> Single character</li>
+                <li><b>string:</b> Textual data (requires `#include <string>`)</li>
+            </ul>
+        </section>
+
+        <section id="oop-exercises" style="background-color: #e0f7fa; padding: 20px; border-radius: 8px; margin-top: 20px;">
+            <h2 style="color: #00796b;">Object-Oriented Programming (OOP) Exercises</h2>
+            <p>Practice your understanding of OOP concepts with these exercises.</p>
+            <ul>
+                <li>
+                    <h3>Exercise 1: Create a Simple Class</h3>
+                    <p>Define a class <code>Person</code> with attributes <code>name</code> and <code>age</code>. Implement a method <code>introduce</code> that prints a message introducing the person.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Person {
+        public:
+            std::string name;
+            int age;
+        
+            void introduce() {
+                std::cout &lt;&lt; "Hi, my name is " &lt;&lt; name &lt;&lt; " and I am " &lt;&lt; age &lt;&lt; " years old." &lt;&lt; std::endl;
+            }
+        };
+        
+        int main() {
+            Person person;
+            person.name = "Alice";
+            person.age = 30;
+            person.introduce();
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 2: Implement Inheritance</h3>
+                    <p>Create a base class <code>Animal</code> with a method <code>makeSound</code>. Derive a class <code>Dog</code> from <code>Animal</code> that overrides the <code>makeSound</code> method.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Animal {
+        public:
+            virtual void makeSound() {
+                std::cout &lt;&lt; "Some generic animal sound" &lt;&lt; std::endl;
+            }
+        };
+        
+        class Dog : public Animal {
+        public:
+            void makeSound() override {
+                std::cout &lt;&lt; "Woof!" &lt;&lt; std::endl;
+            }
+        };
+        
+        int main() {
+            Dog dog;
+            dog.makeSound();
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 3: Create a Class with Constructor and Destructor</h3>
+                    <p>Define a class <code>Rectangle</code> with private attributes <code>length</code> and <code>width</code>. Implement a constructor to initialize these attributes and a destructor to print a message when an object is destroyed.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Rectangle {
+        private:
+            double length;
+            double width;
+        
+        public:
+            Rectangle(double l, double w) : length(l), width(w) {
+                std::cout &lt;&lt; "Rectangle created!" &lt;&lt; std::endl;
+            }
+        
+            ~Rectangle() {
+                std::cout &lt;&lt; "Rectangle destroyed!" &lt;&lt; std::endl;
+            }
+        
+            double area() {
+                return length * width;
+            }
+        };
+        
+        int main() {
+            Rectangle rect(10.0, 5.0);
+            std::cout &lt;&lt; "Area: " &lt;&lt; rect.area() &lt;&lt; std::endl;
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 4: Implement Polymorphism</h3>
+                    <p>Using the <code>Shape</code> class as a base class with a virtual method <code>draw</code>, create derived classes <code>Circle</code> and <code>Square</code>. Override the <code>draw</code> method in each derived class.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Shape {
+        public:
+            virtual void draw() {
+                std::cout &lt;&lt; "Drawing a shape" &lt;&lt; std::endl;
+            }
+        };
+        
+        class Circle : public Shape {
+        public:
+            void draw() override {
+                std::cout &lt;&lt; "Drawing a circle" &lt;&lt; std::endl;
+            }
+        };
+        
+        class Square : public Shape {
+        public:
+            void draw() override {
+                std::cout &lt;&lt; "Drawing a square" &lt;&lt; std::endl;
+            }
+        };
+        
+        int main() {
+            Shape* shape1 = new Circle();
+            Shape* shape2 = new Square();
+            shape1-&gt;draw();
+            shape2-&gt;draw();
+            delete shape1;
+            delete shape2;
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 5: Use Access Modifiers</h3>
+                    <p>Create a class <code>Car</code> with private attributes <code>brand</code> and <code>model</code>. Provide public getter and setter methods to access and modify these attributes.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Car {
+        private:
+            std::string brand;
+            std::string model;
+        
+        public:
+            void setBrand(const std::string& b) {
+                brand = b;
+            }
+        
+            std::string getBrand() {
+                return brand;
+            }
+        
+            void setModel(const std::string& m) {
+                model = m;
+            }
+        
+            std::string getModel() {
+                return model;
+            }
+        };
+        
+        int main() {
+            Car car;
+            car.setBrand("Toyota");
+            car.setModel("Corolla");
+            std::cout &lt;&lt; "Brand: " &lt;&lt; car.getBrand() &lt;&lt; std::endl;
+            std::cout &lt;&lt; "Model: " &lt;&lt; car.getModel() &lt;&lt; std::endl;
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 6: Demonstrate Encapsulation</h3>
+                    <p>Create a class <code>Student</code> with private attributes <code>name</code> and <code>grade</code>. Implement methods to set and get these attributes and ensure data is valid.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Student {
+        private:
+            std::string name;
+            int grade;
+        
+        public:
+            void setName(const std::string& n) {
+                name = n;
+            }
+        
+            std::string getName() {
+                return name;
+            }
+        
+            void setGrade(int g) {
+                if (g >= 0 && g <= 100) {
+                    grade = g;
+                } else {
+                    std::cout &lt;&lt; "Invalid grade" &lt;&lt; std::endl;
+                }
+            }
+        
+            int getGrade() {
+                return grade;
+            }
+        };
+        
+        int main() {
+            Student student;
+            student.setName("John");
+            student.setGrade(85);
+            std::cout &lt;&lt; "Name: " &lt;&lt; student.getName() &lt;&lt; std::endl;
+            std::cout &lt;&lt; "Grade: " &lt;&lt; student.getGrade() &lt;&lt; std::endl;
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 7: Implement Abstraction</h3>
+                    <p>Create an abstract class <code>Vehicle</code> with a pure virtual function <code>startEngine</code>. Derive classes <code>Car</code> and <code>Motorcycle</code> that implement this function.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Vehicle {
+        public:
+            virtual void startEngine() = 0; // Pure virtual function
+        };
+        
+        class Car : public Vehicle {
+        public:
+            void startEngine() override {
+                std::cout &lt;&lt; "Car engine started." &lt;&lt; std::endl;
+            }
+        };
+        
+        class Motorcycle : public Vehicle {
+        public:
+            void startEngine() override {
+                std::cout &lt;&lt; "Motorcycle engine started." &lt;&lt; std::endl;
+            }
+        };
+        
+        int main() {
+            Car car;
+            Motorcycle bike;
+            car.startEngine();
+            bike.startEngine();
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 8: Demonstrate Composition</h3>
+                    <p>Implement a class <code>Library</code> that contains a collection of <code>Book</code> objects. Each <code>Book</code> has attributes <code>title</code> and <code>author</code>.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        #include &lt;vector&gt;
+        
+        class Book {
+        private:
+            std::string title;
+            std::string author;
+        
+        public:
+            Book(const std::string& t, const std::string& a) : title(t), author(a) {}
+        
+            void display() {
+                std::cout &lt;&lt; "Title: " &lt;&lt; title &lt;&lt; ", Author: " &lt;&lt; author &lt;&lt; std::endl;
+            }
+        };
+        
+        class Library {
+        private:
+            std::vector<Book> books;
+        
+        public:
+            void addBook(const Book& book) {
+                books.push_back(book);
+            }
+        
+            void displayBooks() {
+                for (const auto& book : books) {
+                    book.display();
+                }
+            }
+        };
+        
+        int main() {
+            Library library;
+            library.addBook(Book("1984", "George Orwell"));
+            library.addBook(Book("To Kill a Mockingbird", "Harper Lee"));
+            library.displayBooks();
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 9: Use Static Members</h3>
+                    <p>Create a class <code>Employee</code> with a static member <code>count</code> that tracks the number of instances created. Implement methods to display and update this count.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Employee {
+        private:
+            static int count;
+        
+        public:
+            Employee() {
+                ++count;
+            }
+        
+            static void displayCount() {
+                std::cout &lt;&lt; "Number of employees: " &lt;&lt; count &lt;&lt; std::endl;
+            }
+        };
+        
+        int Employee::count = 0;
+        
+        int main() {
+            Employee emp1, emp2, emp3;
+            Employee::displayCount();
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 10: Implement Friend Classes</h3>
+                    <p>Create a class <code>Box</code> with private attributes <code>length</code>, <code>width</code>, and <code>height</code>. Implement a friend class <code>BoxPrinter</code> that can access and print these attributes.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class BoxPrinter;
+        
+        class Box {
+        private:
+            double length, width, height;
+        
+        public:
+            Box(double l, double w, double h) : length(l), width(w), height(h) {}
+        
+            friend class BoxPrinter;
+        };
+        
+        class BoxPrinter {
+        public:
+            void printBoxDetails(const Box& box) {
+                std::cout &lt;&lt; "Length: " &lt;&lt; box.length &lt;&lt; ", Width: " &lt;&lt; box.width &lt;&lt; ", Height: " &lt;&lt; box.height &lt;&lt; std::endl;
+            }
+        };
+        
+        int main() {
+            Box box(3.0, 4.0, 5.0);
+            BoxPrinter printer;
+            printer.printBoxDetails(box);
+            return 0;
+        }
+                    </code></pre>
+                </li>
+                <li>
+                    <h3>Exercise 11: Implement Operator Overloading</h3>
+                    <p>Create a class <code>Complex</code> to represent complex numbers. Overload the <code>+</code> operator to add two complex numbers.</p>
+                    <pre><code>#include &lt;iostream&gt;
+        
+        class Complex {
+        private:
+            double real;
+            double imag;
+        
+        public:
+            Complex(double r, double i) : real(r), imag(i) {}
+        
+            Complex operator+(const Complex& other) {
+                return Complex(real + other.real, imag + other.imag);
+            }
+        
+            void display() {
+                std::cout &lt;&lt; real &lt;&lt; " + " &lt;&lt; imag &lt;&lt; "i" &lt;&lt; std::endl;
+            }
+        };
+        
+        int main() {
+            Complex c1(3.0, 2.0);
+            Complex c2(1.5, 4.5);
+            Complex c3 = c1 + c2;
+            c3.display();
+            return 0;
+        }
+                    </code></pre>
+                </li>
+            </ul>
+        </section>
+        
+
+        <!-- Operators Section -->
+        <section id="operators">
+            <h2>C++ Operators</h2>
+            <p>C++ supports various operators for arithmetic, comparison, logical operations, and more.</p>
+            <ul>
+                <li><b>Arithmetic Operators:</b> +, -, *, /, %</li>
+                <li><b>Comparison Operators:</b> ==, !=, >, <, >=, <=</li>
+                <li><b>Logical Operators:</b> &&, ||, !</li>
+            </ul>
+        </section>
+
+        <!-- Control Flow Section -->
+        <section id="controlflow">
+            <h2>Control Flow in C++</h2>
+            <p>C++ supports control flow using `if`, `else`, and loops like `for` and `while`.</p>
+            <pre><code>
+// Control Flow Example
+int age = 18;
+if (age >= 18) {
+    cout << "You are an adult." << endl;
+} else {
+    cout << "You are a minor." << endl;
+}
+            </code></pre>
+        </section>
+
+        <!-- Functions Section -->
+        <section id="functions">
+            <h2>C++ Functions</h2>
+            <p>Functions in C++ are defined using a return type, a name, and a parameter list.</p>
+            <pre><code>
+// Function Example
+int add(int a, int b) {
+    return a + b;
+}
+
+int result = add(5, 10);
+cout << result << endl;
+            </code></pre>
+        </section>
+
+        <!-- Classes & Objects Section -->
+        <section id="classes-objects">
+            <h2>Classes & Objects in C++</h2>
+            <p>C++ supports object-oriented programming with classes and objects.</p>
+            <pre><code>
+// Classes & Objects Example
+class MyClass {
+public:
+    int myNumber;
+    string myString;
+};
+
+int main() {
+    MyClass myObj;
+    myObj.myNumber = 15;
+    myObj.myString = "Hello CodeHeaven";
+    cout << myObj.myNumber << " " << myObj.myString << endl;
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <!-- Loops Section -->
+        <section id="loops">
+            <h2>C++ Loops</h2>
+            <p>Loops in C++ include `for`, `while`, and `do-while` loops.</p>
+            <pre><code>
+// For Loop Example
+for (int i = 0; i < 5; i++) {
+    cout << i << endl;
+}
+            </code></pre>
+        </section>
+
+        <!-- Arrays Section -->
+        <section id="arrays">
+            <h2>C++ Arrays</h2>
+            <p>Arrays in C++ are used to store multiple values of the same type.</p>
+            <pre><code>
+// Array Example
+int numbers[5] = {1, 2, 3, 4, 5};
+cout << numbers[0] << endl; // Outputs 1
+            </code></pre>
+        </section>
+
+        <!-- Pointers Section -->
+        <section id="pointers">
+            <h2>C++ Pointers</h2>
+            <p>Pointers are variables that store the memory address of another variable.</p>
+            <pre><code>
+// Pointer Example
+int myVar = 10;
+int* ptr = &myVar;
+cout << *ptr << endl; // Outputs 10
+            </code></pre>
+        </section>
+
+        <!-- File Handling Section -->
+        <section id="file-handling">
+            <h2>File Handling in C++</h2>
+            <p>C++ supports file handling with libraries like `fstream`.</p>
+            <pre><code>
+// File Handling Example
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream MyFile("example.txt");
+    MyFile << "Hello CodeHeaven!";
+    MyFile.close();
+    return 0;
+}
+            </code></pre>
+        </section>
+
+
+        <!-- Exercises Section -->
+        <section id="exercises">
+            <h2>C++ Exercises</h2>
+            <p>Practice your C++ skills with these exercises.</p>
+            <ul>
+                <li>Exercise 1: Write a program to calculate the factorial of a number.</li>
+                <li>Exercise 2: Write a program to find the largest number in an array.</li>
+                <li>Exercise 3: Implement a basic calculator using functions.</li>
+                <li>Exercise 4: Write a program to reverse a string.</li>
+                <li>Exercise 5: Write a program to check if a number is a prime number.</li>
+                <li>Exercise 6: Create a class to represent a bank account with methods to deposit, withdraw, and check the balance.</li>
+                <li>Exercise 7: Implement a program to sort an array using bubble sort.</li>
+                <li>Exercise 8: Write a program to find the GCD (Greatest Common Divisor) of two numbers using Euclid's algorithm.</li>
+                <li>Exercise 9: Implement a linked list with basic operations: insertion, deletion, and traversal.</li>
+                <li>Exercise 10: Write a program to generate Fibonacci numbers up to a specified number of terms.</li>
+                <li>Exercise 11: Implement a program to merge two sorted arrays into a single sorted array.</li>
+                <li>Exercise 12: Create a program to count the number of vowels in a given string.</li>
+                <li>Exercise 13: Write a program to perform matrix multiplication.</li>
+                <li>Exercise 14: Implement a stack using arrays and linked lists.</li>
+                <li>Exercise 15: Write a program to read and write data to a file.</li>
+            </ul>
+        </section>
+        
+        
+        <!-- Footer -->
+        <footer>
+            <p>CodeHeaven &copy; 2024. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

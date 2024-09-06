@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn CSS - CodeHeaven</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 235px;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 300;
+            display: block;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Main Content */
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            background-color: #fff;
+            flex: 1;
+        }
+
+        .content section {
+            margin-bottom: 30px;
+        }
+
+        .content h1 {
+            font-size: 2em;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        .code-example {
+            background-color: #e8e8e8;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>CSS Syllabus</h2>
+            <ul>
+                <li><a href="#intro">Introduction to CSS</a></li>
+                <li><a href="#syntax">CSS Syntax</a></li>
+                <li><a href="#selectors">CSS Selectors</a></li>
+                <li><a href="#colors">CSS Colors</a></li>
+                <li><a href="#backgrounds">CSS Backgrounds</a></li>
+                <li><a href="#borders">CSS Borders</a></li>
+                <li><a href="#margins">CSS Margins</a></li>
+                <li><a href="#padding">CSS Padding</a></li>
+                <li><a href="#height-width">CSS Height and Width</a></li>
+                <li><a href="#box-model">CSS Box Model</a></li>
+                <li><a href="#text">CSS Text</a></li>
+                <li><a href="#fonts">CSS Fonts</a></li>
+                <li><a href="#icons">CSS Icons</a></li>
+                <li><a href="#links">CSS Links</a></li>
+                <li><a href="#lists">CSS Lists</a></li>
+                <li><a href="#tables">CSS Tables</a></li>
+                <li><a href="#positioning">CSS Positioning</a></li>
+                <li><a href="#z-index">CSS Z-index</a></li>
+                <li><a href="#overflow">CSS Overflow</a></li>
+                <li><a href="#float">CSS Float</a></li>
+                <li><a href="#flexbox">CSS Flexbox</a></li>
+                <li><a href="#grid">CSS Grid</a></li>
+                <li><a href="#align">CSS Align</a></li>
+                <li><a href="#combinators">CSS Combinators</a></li>
+                <li><a href="#pseudo-classes">CSS Pseudo-classes</a></li>
+                <li><a href="#pseudo-elements">CSS Pseudo-elements</a></li>
+                <li><a href="#opacity">CSS Opacity</a></li>
+                <li><a href="#transitions">CSS Transitions</a></li>
+                <li><a href="#animations">CSS Animations</a></li>
+                <li><a href="#media-queries">CSS Media Queries</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section id="intro">
+                <h1>Introduction to CSS</h1>
+                <p>CSS (Cascading Style Sheets) is a language used to describe the presentation of a document written in HTML. It allows you to style and layout web pages, including changing colors, fonts, and spacing.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">body</span> {
+    <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">#f4f4f4</span>;
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">#333</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="syntax">
+                <h1>CSS Syntax</h1>
+                <p>The CSS syntax consists of a selector and a declaration block. The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">selector</span> {
+    <span style="color: #6f42c1;">property</span>: <span style="color: #032f62;">value</span>;
+    <span style="color: #6f42c1;">property</span>: <span style="color: #032f62;">value</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="selectors">
+                <h1>CSS Selectors</h1>
+                <p>CSS selectors are used to select the HTML elements you want to style. Common selectors include element selectors, class selectors, ID selectors, and attribute selectors.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">p</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">#333</span>;
+}
+
+<span style="color: #d73a49;">.class-name</span> {
+    <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">#f0f0f0</span>;
+}
+
+<span style="color: #d73a49;">#id-name</span> {
+    <span style="color: #6f42c1;">font-size</span>: <span style="color: #032f62;">16px</span>;
+}
+
+<span style="color: #d73a49;">[type="text"]</span> {
+    <span style="color: #6f42c1;">border</span>: <span style="color: #032f62;">1px solid #ccc</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="colors">
+                <h1>CSS Colors</h1>
+                <p>CSS allows you to apply color to your HTML elements using color names, HEX, RGB, RGBA, HSL, and HSLA values.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">h1</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">red</span>;
+}
+
+<span style="color: #d73a49;">p</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">#00ff00</span>;
+}
+
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">rgb(0, 0, 255)</span>;
+}
+
+<span style="color: #d73a49;">.box</span> {
+    <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">hsla(120, 100%, 50%, 0.3)</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="backgrounds">
+                <h1>CSS Backgrounds</h1>
+                <p>CSS allows you to style backgrounds of elements using background-color, background-image, background-repeat, background-size, and background-position properties.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">body</span> {
+    <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">#f0f0f0</span>;
+    <span style="color: #6f42c1;">background-image</span>: <span style="color: #032f62;">url('image.jpg')</span>;
+    <span style="color: #6f42c1;">background-repeat</span>: <span style="color: #032f62;">no-repeat</span>;
+    <span style="color: #6f42c1;">background-size</span>: <span style="color: #032f62;">cover</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="borders">
+                <h1>CSS Borders</h1>
+                <p>CSS border properties allow you to define the border around elements with styles like border-width, border-style, and border-color.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">border-width</span>: <span style="color: #032f62;">2px</span>;
+    <span style="color: #6f42c1;">border-style</span>: <span style="color: #032f62;">solid</span>;
+    <span style="color: #6f42c1;">border-color</span>: <span style="color: #032f62;">#333</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="margins">
+                <h1>CSS Margins</h1>
+                <p>CSS margins are used to create space outside of an element's border. You can specify margins individually or together for all sides.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">p</span> {
+    <span style="color: #6f42c1;">margin</span>: <span style="color: #032f62;">20px</span>;
+}
+
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">margin-top</span>: <span style="color: #032f62;">10px</span>;
+    <span style="color: #6f42c1;">margin-right</span>: <span style="color: #032f62;">15px</span>;
+    <span style="color: #6f42c1;">margin-bottom</span>: <span style="color: #032f62;">20px</span>;
+    <span style="color: #6f42c1;">margin-left</span>: <span style="color: #032f62;">25px</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="padding">
+                <h1>CSS Padding</h1>
+                <p>CSS padding properties are used to create space inside an element, between the content and its border. Like margins, padding can be set for all sides or individually.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">padding</span>: <span style="color: #032f62;">10px</span>;
+}
+
+<span style="color: #d73a49;">section</span> {
+    <span style="color: #6f42c1;">padding-top</span>: <span style="color: #032f62;">15px</span>;
+    <span style="color: #6f42c1;">padding-right</span>: <span style="color: #032f62;">20px</span>;
+    <span style="color: #6f42c1;">padding-bottom</span>: <span style="color: #032f62;">25px</span>;
+    <span style="color: #6f42c1;">padding-left</span>: <span style="color: #032f62;">30px</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="height-width">
+                <h1>CSS Height and Width</h1>
+                <p>CSS properties for height and width allow you to control the size of an element. You can set values in pixels, percentages, or other units.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">width</span>: <span style="color: #032f62;">100%</span>;
+    <span style="color: #6f42c1;">height</span>: <span style="color: #032f62;">200px</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="box-model">
+                <h1>CSS Box Model</h1>
+                <p>The CSS box model describes the rectangular boxes generated for elements in the document tree. It includes margins, borders, padding, and the content itself.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">margin</span>: <span style="color: #032f62;">20px</span>;
+    <span style="color: #6f42c1;">border</span>: <span style="color: #032f62;">2px solid #333</span>;
+    <span style="color: #6f42c1;">padding</span>: <span style="color: #032f62;">15px</span>;
+    <span style="color: #6f42c1;">width</span>: <span style="color: #032f62;">200px</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="text">
+                <h1>CSS Text</h1>
+                <p>CSS text properties control the appearance of text within elements. This includes text alignment, text decoration, line height, and text transformation.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">p</span> {
+    <span style="color: #6f42c1;">text-align</span>: <span style="color: #032f62;">center</span>;
+    <span style="color: #6f42c1;">text-decoration</span>: <span style="color: #032f62;">underline</span>;
+    <span style="color: #6f42c1;">line-height</span>: <span style="color: #032f62;">1.5</span>;
+    <span style="color: #6f42c1;">text-transform</span>: <span style="color: #032f62;">uppercase</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="fonts">
+                <h1>CSS Fonts</h1>
+                <p>CSS fonts allow you to set the font family, size, weight, and style of text. You can use system fonts or custom fonts using @font-face or web font services.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">h1</span> {
+    <span style="color: #6f42c1;">font-family</span>: <span style="color: #032f62;">'Arial', sans-serif</span>;
+    <span style="color: #6f42c1;">font-size</span>: <span style="color: #032f62;">2em</span>;
+    <span style="color: #6f42c1;">font-weight</span>: <span style="color: #032f62;">bold</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="icons">
+                <h1>CSS Icons</h1>
+                <p>CSS allows you to style icons using font-based icons like Font Awesome or SVGs. You can set size, color, and other properties for icons.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">i</span> {
+    <span style="color: #6f42c1;">font-size</span>: <span style="color: #032f62;">24px</span>;
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">#333</span>;
+}
+                    </pre>
+                </div>
+            </section>
+            <section id="links">
+                <h1>CSS Links</h1>
+                <p>CSS allows you to style links in different states, such as normal, visited, hover, and active.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">a:link</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">blue</span>;
+}
+<span style="color: #d73a49;">a:visited</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">purple</span>;
+}
+<span style="color: #d73a49;">a:hover</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">red</span>;
+}
+<span style="color: #d73a49;">a:active</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">green</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="lists">
+                <h1>CSS Lists</h1>
+                <p>CSS provides various options to style lists, including changing list markers, adding custom markers, and adjusting padding and margins.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">ul</span> {
+    <span style="color: #6f42c1;">list-style-type</span>: <span style="color: #032f62;">circle</span>;
+}
+<span style="color: #d73a49;">ol</span> {
+    <span style="color: #6f42c1;">list-style-type</span>: <span style="color: #032f62;">decimal-leading-zero</span>;
+}
+<span style="color: #d73a49;">ul.custom-markers</span> {
+    <span style="color: #6f42c1;">list-style</span>: <span style="color: #032f62;">url('marker.png')</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="tables">
+                <h1>CSS Tables</h1>
+                <p>CSS can be used to style tables, including borders, spacing, and even alternating row colors for readability.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">table</span> {
+    <span style="color: #6f42c1;">width</span>: <span style="color: #032f62;">100%</span>;
+    <span style="color: #6f42c1;">border-collapse</span>: <span style="color: #032f62;">collapse</span>;
+}
+<span style="color: #d73a49;">th, td</span> {
+    <span style="color: #6f42c1;">border</span>: <span style="color: #032f62;">1px solid #ddd</span>;
+    <span style="color: #6f42c1;">padding</span>: <span style="color: #032f62;">8px</span>;
+}
+<span style="color: #d73a49;">tr:nth-child(even)</span> {
+    <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">#f2f2f2</span>;
+}
+<span style="color: #d73a49;">th</span> {
+    <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">#4CAF50</span>;
+    <span style="color: #6f42c1;">color</span>: <span style="color: #f1f1f1;">white</span>;
+}
+                    </pre>
+                </div>
+            </section>
+          
+            <section id="positioning">
+                <h1>CSS Positioning</h1>
+                <p>CSS positioning allows you to control the layout of elements on a page using properties such as static, relative, absolute, and fixed.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">position</span>: <span style="color: #032f62;">absolute</span>;
+    <span style="color: #6f42c1;">top</span>: <span style="color: #032f62;">50px</span>;
+    <span style="color: #6f42c1;">left</span>: <span style="color: #032f62;">100px</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="z-index">
+                <h1>CSS Z-index</h1>
+                <p>The CSS z-index property controls the vertical stacking order of elements that overlap.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">position</span>: <span style="color: #032f62;">absolute</span>;
+    <span style="color: #6f42c1;">z-index</span>: <span style="color: #032f62;">10</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="overflow">
+                <h1>CSS Overflow</h1>
+                <p>The CSS overflow property controls how content is handled that exceeds its container. Options include visible, hidden, scroll, and auto.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div</span> {
+    <span style="color: #6f42c1;">overflow</span>: <span style="color: #032f62;">hidden</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="float">
+                <h1>CSS Float</h1>
+                <p>The CSS float property is used for positioning and formatting content, allowing elements to float to the left or right of their container.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">img</span> {
+    <span style="color: #6f42c1;">float</span>: <span style="color: #032f62;">left</span>;
+    <span style="color: #6f42c1;">margin</span>: <span style="color: #032f62;">10px</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="flexbox">
+                <h1>CSS Flexbox</h1>
+                <p>CSS Flexbox is a layout model that allows you to design flexible and responsive layout structures without using floats or positioning.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">.container</span> {
+    <span style="color: #6f42c1;">display</span>: <span style="color: #032f62;">flex</span>;
+    <span style="color: #6f42c1;">justify-content</span>: <span style="color: #032f62;">space-between</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="grid">
+                <h1>CSS Grid</h1>
+                <p>CSS Grid Layout is a two-dimensional layout system for the web, allowing you to control both rows and columns together.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">.grid-container</span> {
+    <span style="color: #6f42c1;">display</span>: <span style="color: #032f62;">grid</span>;
+    <span style="color: #6f42c1;">grid-template-columns</span>: <span style="color: #032f62;">repeat(3, 1fr)</span>;
+    <span style="color: #6f42c1;">gap</span>: <span style="color: #032f62;">10px</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="align">
+                <h1>CSS Align</h1>
+                <p>CSS alignment properties allow you to align items within a container along the horizontal or vertical axis.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">.flex-container</span> {
+    <span style="color: #6f42c1;">align-items</span>: <span style="color: #032f62;">center</span>;
+    <span style="color: #6f42c1;">justify-content</span>: <span style="color: #032f62;">center</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="combinators">
+                <h1>CSS Combinators</h1>
+                <p>CSS combinators combine multiple selectors, such as descendant, child, adjacent sibling, and general sibling combinators, to style elements.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">div p</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">red</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="pseudo-classes">
+                <h1>CSS Pseudo-classes</h1>
+                <p>CSS pseudo-classes select elements based on their state, such as :hover, :active, :nth-child, and more.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">a:hover</span> {
+    <span style="color: #6f42c1;">color</span>: <span style="color: #032f62;">blue</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="pseudo-elements">
+                <h1>CSS Pseudo-elements</h1>
+                <p>CSS pseudo-elements style specific parts of an element, such as ::before, ::after, ::first-line, and more.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">p::first-line</span> {
+    <span style="color: #6f42c1;">font-weight</span>: <span style="color: #032f62;">bold</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="opacity">
+                <h1>CSS Opacity</h1>
+                <p>The CSS opacity property controls the transparency of an element, ranging from 0 (completely transparent) to 1 (completely opaque).</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">img</span> {
+    <span style="color: #6f42c1;">opacity</span>: <span style="color: #032f62;">0.5</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="transitions">
+                <h1>CSS Transitions</h1>
+                <p>CSS transitions allow you to change property values smoothly over a given duration.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">button</span> {
+    <span style="color: #6f42c1;">transition</span>: <span style="color: #032f62;">background-color 0.3s ease</span>;
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="animations">
+                <h1>CSS Animations</h1>
+                <p>CSS animations allow you to animate the transition of properties, using keyframes to control the stages of the animation.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">@keyframes example</span> {
+    <span style="color: #d73a49;">from</span> { <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">red</span>; }
+    <span style="color: #d73a49;">to</span> { <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">yellow</span>; }
+}
+                    </pre>
+                </div>
+            </section>
+
+            <section id="media-queries">
+                <h1>CSS Media Queries</h1>
+                <p>CSS media queries allow you to apply styles based on the device's characteristics, such as screen size, resolution, or orientation.</p>
+                <div class="code-example">
+                    <pre>
+<span style="color: #d73a49;">@media</span> (<span style="color: #6f42c1;">max-width</span>: <span style="color: #032f62;">600px</span>) {
+    <span style="color: #d73a49;">div</span> {
+        <span style="color: #6f42c1;">background-color</span>: <span style="color: #032f62;">lightblue</span>;
+    }
+}
+                    </pre>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <footer>
+        &copy; 2024 CodeHeaven. All rights reserved.
+    </footer>
+</body>
+</html>

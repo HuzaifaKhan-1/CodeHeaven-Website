@@ -2,35 +2,362 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="logo_ch.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>CodeHeaven Homepage</title>
+    <link rel="stylesheet" href="style_homepage.css">
     <script src="https://kit.fontawesome.com/e903413155.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    
-    <div class="container">
-        <h2>Sign In...</h2>
-        <h1>CodeHeaven</h1>
+    <header>
+        <a href="#" class="logo">
+            <img src="logo_ch.png">
+            <span class="logo-text">
+                <span class="code">Code</span><span class="heaven">Heaven</span>
+            </span>
+        </a>
 
-        <div class="box">
-            <i class="fa-solid fa-envelope"></i>
-            <input type="email" name="email" placeholder="Enter Your Email">
+        <ul class="navlist">
+            <li><a href="#exercises-section">Exercises</a></li>
+            <li><a href="#live-competitions">Competitions</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#demo-certificate">Certificates</a></li>
+        </ul>
+        
+        
+        <div class="right-content">
+            <a href="login.html" class="nav-btn" target="_blank">Sign In</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
         </div>
-        <div class="box">
-            <i class="fa-solid fa-key"></i>
-            <input type="password" name="password" placeholder="Enter Your Password">
+    </header>
+
+
+
+    <!------------hero------------->
+    <section id="home"   class="hero">
+        <div class="hero-text">
+            <h5 data-aos="fade-right" data-aos-duration="1400">Empower Your Coding Journey...</h5>
+            <h1 data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="200">-Learn, Code, Grow</h1>
+            <p data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200">At CodeHeaven, every line of code refines your skills. Our resources boost your confidence, no matter your experience level.</p>
+            <div class="main-hero" data-aos="flip-down" data-aos-duration="1400" data-aos-delay="400">
+                <a href="#learn" class="btn">Start Learning</a>
+            </div>
         </div>
-        <div class="forget">
-            <label for="">
-                <input type="checkbox"> Remember Me
-            </label>
-            <a href="#">Forgot Password?</a>
+        <div class="hero-img" data-aos="zoom-in" data-aos-duration="1400">
+            <img src="bcg10.jpg">
         </div>
-        <button class="btn"><a href="homePage.html" target="_blank">Sign In</a></button>
-        <div class="register">
-            <p>Don't have an account? <a href="register.html" target="_blank">Register</a></p>
-        </div> 
+    </section>
+
+    <div class="icons">
+        <a href="#" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="600"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="700"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" data-aos="fade-in" data-aos-duration="1400" data-aos-delay="800"><i class="fa-brands fa-x-twitter"></i></i></a>
     </div>
+
+    <div class="text" id="learn">
+        <h1>Learn Programming for Free!</h1>
+    </div>
+
+    <!-- HTML Content Container -->
+    <div class="html-container">
+        <div class="left-section">
+            <h1>HTML</h1>
+            <p>The language for building web pages</p>
+            <a href="html_tab.html#learn-html"><button class="button">Learn HTML</button></a>
+            <a href="html_tab.html#video-tutorial"><button class="button secondary">Video Tutorial</button></a>
+            <a href="html_tab.html#html-reference"><button class="button dark">HTML Reference</button></a>
+            <a href="html_tab.html#get-certified"><button class="button red">Get Certified</button></a>
+        </div>
+        <div class="right-section">
+            <h2>HTML Example:</h2>
+            <div class="code-box">
+                &lt;!DOCTYPE html&gt;<br>
+                &lt;html&gt;<br>
+                &lt;head&gt;<br>
+                &lt;title&gt;HTML Tutorial&lt;/title&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &lt;h1&gt;This is a heading&lt;/h1&gt;<br>
+                &lt;p&gt;This is a paragraph.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
+                &lt;/html&gt;
+            </div>
+            <a href="code-editor.html" target="_blank">
+                <button style="background-color: #4CAF50; color: white; padding: 15px 20px; border: none; cursor: pointer;">
+                    Try it Yourself
+                </button>
+            </a>
+        </div>
+    </div>
+
+
+    
+
+    <!-- New Programming Languages Section -->
+    <div  id="courses"  class="container-lang">
+        <h2 class="container-heading">More in Web...</h2>
+        <div class="box-container">
+            <div class="box-css">
+                <h3>CSS</h3>
+                <p>CSS lets you craft beautiful, stylish web pages effortlessly.
+
+                    Dive into CSS and unlock the power to design visually stunning websites</p>
+                <a href="css_tab.html"><button class="Btn-css">Learn CSS</button></a>
+                </div>
+            <div class="box-js">
+                <h3>JavaScript</h3>
+                <p>Adds interactivity and dynamic features to your websites, making them engaging and responsive.</p>
+                <a href="javascript.html"><button class="Btn-css">Learn JavaScript</button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container-lang2">
+        <h2 class="container-heading2">Programming Languages...</h2>
+        <div class="box-container2">
+            <div class="box-py">
+                <h3>Python</h3>
+                <p>Powerful, versatile, ideal for Web, Data, Automation etc</p>
+                <a href="python.html"><button class="Btn-py">Learn Python</button></a>
+            </div>
+            <div class="box-c1">
+                <h3>C++</h3>
+                <p>Powerful, efficient, ideal for system and game development.</p>
+                <a href="c1.html"><button class="Btn-c1">Learn C++</button></a>
+            </div>
+            <div class="box-java">
+                <h3>Java</h3>
+                <p>Java is a platform-independent, OOP language.</p>
+                <a href="java.html"><button class="Btn-java">Learn Java</button></a>
+            </div>
+            <div class="box-java">
+                <h3>C</h3>
+                <p>C powers everything from operating systems to software.</p>
+                <a href="c2.html"><button class="Btn-java">Learn C</button></a>
+            </div>
+            <div class="box-c2">
+                <h3>C#</h3>
+                <p>C# is ideal for Windows apps and games.</p>
+                <a href="c3.html"><button class="Btn-c2">Learn C#</button></a>
+            </div>
+            <div class="box-sql">
+                <h3>SQL</h3>
+                <p>SQL is the language for managing databases.</p>
+                <a href="sql.html"><button class="Btn-sql">Learn SQL</button></a>
+            </div>
+
+            <!-- Add more containers for other languages as needed -->
+        </div>
+    </div>
+    
+    
+
+
+    <!-- Smooth Gradient Transition Between Sections -->
+<div class="section-transition"></div>
+
+
+<!-- Live Exercises Section -->
+<div id="exercises-section" class="container-exercises">
+    <h2 class="container-heading-exercises">Live Coding Exercises...</h2>
+    <div class="exercise-container">
+        <div class="exercise-box" data-aos="fade-up" data-aos-duration="1400">
+            <h3>HTML Challenges</h3>
+            <p>Test your HTML skills with real-time challenges.</p>
+            <a href="htmlchallenges.html"><button class="Btn-exercise">Start Exercise</button></a>
+        </div>
+        <div class="exercise-box" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">
+            <h3>CSS Challenges</h3>
+            <p>Improve your CSS design capabilities.</p>
+            <a href="csschallenges.html"><button class="Btn-exercise">Start Exercise</button></a>
+        </div>
+        <div class="exercise-box" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="400">
+            <h3>JavaScript Challenges</h3>
+            <p>Enhance your JavaScript programming skills.</p>
+            <a href="jschallenges.html"><button class="Btn-exercise">Start Exercise</button></a>
+        </div>
+        <!-- Add more boxes for other languages as needed -->
+    </div>
+</div>
+
+
+
+<div class="section-transition2"></div>
+<section id="live-competitions">
+    <div class="competitions-header">
+        <h2>Live Competitions</h2>
+        <p>Show your coding skills and compete with the best developers. Join now and see where you stand!</p>
+    </div>
+    <div class="competitions-grid">
+        <!-- Competition 1 -->
+        <div class="competition-card">
+            <div class="competition-image" style="background-image: url('hackathon.jpg');">
+                <!-- Hackathon Image -->
+            </div>
+            <div class="competition-content">
+                <h3>Hackathon 2024</h3>
+                <p>Compete with top coders in the most challenging hackathon of the year.</p>
+                <a href="hackathon.html"><button class="join-btn">Join Now</button></a>
+            </div>
+        </div>
+        
+        <!-- Competition 2 -->
+        <div class="competition-card">
+            <div class="competition-image" style="background-image: url('codesprint.jpg');">
+                <!-- Code Sprint Image -->
+            </div>
+            <div class="competition-content">
+                <h3>Code Sprint</h3>
+                <p>Test your coding speed and problem-solving skills in this intense sprint.</p>
+                <a href="codesprint.html"><button class="join-btn">Join Now</button></a>
+            </div>
+        </div>
+        
+        <!-- Add more competition cards as needed -->
+    </div>
+</section>
+
+
+
+
+<section id="services" class="services-section">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3 class="service-title">Interactive Coding Tutorials</h3>
+        <p class="service-description">Learn to code with hands-on tutorials designed to guide you through real-world programming challenges.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="service-title">Live Coding Exercises</h3>
+        <p class="service-description">Test your coding skills with live exercises that provide instant feedback and help you improve.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="service-title">Community Support</h3>
+        <p class="service-description">Join our community of developers to share knowledge, get help, and collaborate on projects.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3 class="service-title">Certifications</h3>
+        <p class="service-description">Earn certifications that validate your coding skills and boost your career prospects.</p>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+  <section id="demo-certificate" class="demo-certificate-section">
+    <h2 class="section-title">Your Certification Journey Starts Here</h2>
+    <p class="section-description">Get a glimpse of the certificate you'll earn upon completing our courses. Stand out in your career with recognized credentials.</p>
+    
+    <div class="certificate-showcase">
+      <img src="certificate - codeheaven.png" alt="Demo Certificate" class="certificate-image">
+    </div>
+  </section>
+  
+  <section id="certifications" class="certifications-section">
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-description">Earn industry-recognized certifications that validate your coding skills and open doors to new opportunities.</p>
+    
+    <div class="certifications-content">
+      <div class="certification-card">
+        <div class="certification-icon">
+          <i class="fas fa-medal"></i>
+        </div>
+        <h3 class="certification-title">Front-End Development</h3>
+        <p class="certification-description">Master HTML, CSS, and JavaScript to build stunning websites and earn your Front-End Developer certification.</p>
+      </div>
+  
+      <div class="certification-card">
+        <div class="certification-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <h3 class="certification-title">Full-Stack Development</h3>
+        <p class="certification-description">Learn both front-end and back-end technologies, and become a certified Full-Stack Developer.</p>
+      </div>
+  
+      <div class="certification-card">
+        <div class="certification-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3 class="certification-title">Data Science & Machine Learning</h3>
+        <p class="certification-description">Dive into data science and machine learning, and earn a certification that showcases your expertise.</p>
+      </div>
+  
+      <div class="certification-card">
+        <div class="certification-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="certification-title">Cybersecurity</h3>
+        <p class="certification-description">Become a certified cybersecurity expert, and learn how to protect systems from threats and vulnerabilities.</p>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <footer>
+    <div class="row">
+        <div class="col">
+            <div class="logo-container">
+                <img src="logo_ch.png" class="logo_footer" alt="CodeHeaven Logo">
+                <h2 class="logo-text">CodeHeaven</h2>
+            </div>
+            <p>CodeHeaven is your go-to platform for mastering programming languages with hands-on exercises, live coding challenges, and expert guidance. Elevate your coding skills and build a brighter future.</p>
+        </div>
+        <div class="col">
+            <h3>Contact Us</h3>
+            <p class="email-id"><i class="fas fa-envelope"></i> huzaifakhan11@gmail.com</p>
+            <p><i class="fas fa-phone"></i> +91-0123456789</p>
+        </div>
+        <div class="col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <p class="footer-bottom-text">© 2024 CodeHeaven. All Rights Reserved.</p>
+</footer>
+
+
+    <!-- Other scripts -->
+    <script src="homepage.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 1,
+        });
+    </script>
 </body>
 </html>

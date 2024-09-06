@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Tutorial - CodeHeaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 230px;
+            background-color: #333;
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: calc(100% - 260px);
+            overflow-y: auto;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+            transform: translateY(20);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        section p, section ul, section ol, section pre {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Learn C</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#datatypes">Data Types</a></li>
+            <li><a href="#operators">Operators</a></li>
+            <li><a href="#controlflow">Control Flow</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#functions">Functions</a></li>
+            <li><a href="#arrays">Arrays</a></li>
+            <li><a href="#pointers">Pointers</a></li>
+            <li><a href="#structures">Structures</a></li>
+            <li><a href="#file-handling">File Handling</a></li>
+            <li><a href="#preprocessor">Preprocessor</a></li>
+            <li><a href="#dynamic-memory">Dynamic Memory</a></li>
+            <li><a href="#recursion">Recursion</a></li>
+            <li><a href="#enum">Enum</a></li>
+            <li><a href="#exercise">Exercise</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1>Welcome to the C Tutorial - CodeHeaven</h1>
+            <p>Learn C from the basics to advanced concepts.</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="visible">
+            <h2>Introduction to C</h2>
+            <p>C is a powerful general-purpose programming language. It is widely used in system software, application software, device drivers, embedded systems, and more.</p>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation">
+            <h2>Installing C</h2>
+            <p>You can use various compilers like GCC to write and compile C programs.</p>
+            <ol>
+                <li>Install a compiler like GCC.</li>
+                <li>Use an IDE like Code::Blocks, Dev-C++, or Visual Studio Code.</li>
+                <li>Write your C code in a text editor or IDE.</li>
+            </ol>
+        </section>
+
+        <!-- Syntax Section -->
+        <section id="syntax">
+            <h2>C Syntax</h2>
+            <p>C programs follow a specific syntax and structure. The basic building blocks are functions, variables, and statements.</p>
+            <pre><code>
+// C Syntax Example
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, CodeHeaven!\n");
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables">
+            <h2>Variables in C</h2>
+            <p>Variables in C are used to store data that can be modified during program execution.</p>
+            <pre><code>
+// Variables Example
+int x = 10;
+char y = 'A';
+float z = 3.14;
+            </code></pre>
+        </section>
+
+        <!-- Data Types Section -->
+        <section id="datatypes">
+            <h2>C Data Types</h2>
+            <p>C supports various data types including integers, floating-point numbers, characters, and more.</p>
+            <ul>
+                <li><b>int:</b> Integer numbers</li>
+                <li><b>float:</b> Floating-point numbers</li>
+                <li><b>char:</b> Single character</li>
+                <li><b>double:</b> Double-precision floating-point</li>
+            </ul>
+        </section>
+
+        <!-- Operators Section -->
+        <section id="operators">
+            <h2>C Operators</h2>
+            <p>Operators in C are used to perform operations on variables and values.</p>
+            <ul>
+                <li><b>Arithmetic Operators:</b> +, -, *, /, %</li>
+                <li><b>Relational Operators:</b> ==, !=, >, <, >=, <=</li>
+                <li><b>Logical Operators:</b> &&, ||, !</li>
+                <li><b>Assignment Operators:</b> =, +=, -=, *=, /=, %=</li>
+                <li><b>Unary Operators:</b> ++, --</li>
+            </ul>
+        </section>
+
+        <!-- Control Flow Section -->
+        <section id="controlflow">
+            <h2>C Control Flow Statements</h2>
+            <p>Control flow statements in C determine the order in which the code is executed.</p>
+            <ul>
+                <li><b>if-else:</b> Conditional branching</li>
+                <li><b>switch-case:</b> Multi-way branching</li>
+            </ul>
+        </section>
+
+        <!-- Loops Section -->
+        <section id="loops">
+            <h2>Loops in C</h2>
+            <p>Loops allow you to repeatedly execute a block of code as long as a condition is true.</p>
+            <ul>
+                <li><b>for:</b> Used when the number of iterations is known</li>
+                <li><b>while:</b> Used when the number of iterations is unknown</li>
+                <li><b>do-while:</b> Executes at least once, then checks the condition</li>
+            </ul>
+        </section>
+
+        <!-- Functions Section -->
+        <section id="functions">
+            <h2>Functions in C</h2>
+            <p>Functions are blocks of code that perform specific tasks. They help in code reusability and organization.</p>
+            <pre><code>
+// Functions Example
+int add(int a, int b) {
+    return a + b;
+}
+            </code></pre>
+        </section>
+
+        <!-- Arrays Section -->
+        <section id="arrays">
+            <h2>Arrays in C</h2>
+            <p>Arrays in C are used to store multiple values of the same type in a single variable.</p>
+            <pre><code>
+// Arrays Example
+int numbers[5] = {1, 2, 3, 4, 5};
+            </code></pre>
+        </section>
+
+        <!-- Pointers Section -->
+        <section id="pointers">
+            <h2>Pointers in C</h2>
+            <p>Pointers store the memory address of another variable.</p>
+            <pre><code>
+// Pointers Example
+int x = 10;
+int *ptr = &x;
+            </code></pre>
+        </section>
+
+        <!-- Structures Section -->
+        <section id="structures">
+            <h2>Structures in C</h2>
+            <p>Structures are used to group variables of different data types together.</p>
+            <pre><code>
+// Structures Example
+struct Person {
+    char name[50];
+    int age;
+    float salary;
+};
+            </code></pre>
+        </section>
+
+        <!-- File Handling Section -->
+        <section id="file-handling">
+            <h2>File Handling in C</h2>
+            <p>File handling in C allows you to read and write data to files on disk.</p>
+            <pre><code>
+// File Handling Example
+FILE *file = fopen("data.txt", "r");
+if (file == NULL) {
+    printf("Error opening file\n");
+}
+fclose(file);
+            </code></pre>
+        </section>
+
+        <!-- Preprocessor Section -->
+        <section id="preprocessor">
+            <h2>Preprocessor in C</h2>
+            <p>The C preprocessor handles directives for code preprocessing before compilation.</p>
+            <pre><code>
+// Preprocessor Example
+#define PI 3.14
+            </code></pre>
+        </section>
+
+        <!-- Dynamic Memory Section -->
+        <section id="dynamic-memory">
+            <h2>Dynamic Memory Allocation in C</h2>
+            <p>C provides functions to allocate memory dynamically during runtime.</p>
+            <pre><code>
+// Dynamic Memory Allocation Example
+int *ptr = (int *)malloc(5 * sizeof(int));
+if (ptr == NULL) {
+    printf("Memory allocation failed\n");
+}
+free(ptr);
+            </code></pre>
+        </section>
+
+              <!-- Recursion Section -->
+              <section id="recursion">
+                <h2>Recursion in C</h2>
+                <p>Recursion is a technique where a function calls itself to solve a problem.</p>
+                <pre><code>
+    // Recursion Example
+    int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+                </code></pre>
+            </section>
+    
+            <!-- Enumerations Section -->
+            <section id="enum">
+                <h2>Enumerations in C</h2>
+                <p>Enumerations are a user-defined data type that consists of integral constants.</p>
+                <pre><code>
+    // Enumeration Example
+    enum week { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+    enum week today;
+    today = Wednesday;
+                </code></pre>
+            </section>
+    
+            <!-- Exercise Section -->
+            <section id="exercise">
+                <h2>Exercise</h2>
+                <p>Test your knowledge of C programming with these exercises.</p>
+                <ul>
+                    <li>Write a program to find the sum of two numbers.</li>
+                    <li>Write a program to check if a number is prime.</li>
+                    <li>Write a program to reverse a string.</li>
+                    <li>Write a program to calculate the factorial of a number using recursion.</li>
+                    <li>Write a program to demonstrate the use of structures and unions.</li>
+                </ul>
+            </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 CodeHeaven. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

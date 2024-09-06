@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Tutorial - CodeHeaven</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 230px;
+            background-color: #333;
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+            width: calc(100% - 260px);
+            overflow-y: auto;
+        }
+        header {
+            background-color: #444;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
+            transform: translateY(20);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        section p, section ul, section ol, section pre {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Learn C#</h2>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#variables">Variables</a></li>
+            <li><a href="#datatypes">Data Types</a></li>
+            <li><a href="#operators">Operators</a></li>
+            <li><a href="#controlflow">Control Flow</a></li>
+            <li><a href="#loops">Loops</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#classes-objects">Classes & Objects</a></li>
+            <li><a href="#constructors">Constructors</a></li>
+            <li><a href="#inheritance">Inheritance</a></li>
+            <li><a href="#polymorphism">Polymorphism</a></li>
+            <li><a href="#abstraction">Abstraction</a></li>
+            <li><a href="#encapsulation">Encapsulation</a></li>
+            <li><a href="#interfaces">Interfaces</a></li>
+            <li><a href="#namespaces">Namespaces</a></li>
+            <li><a href="#exception-handling">Exception Handling</a></li>
+            <li><a href="#file-handling">File Handling</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#generics">Generics</a></li>
+            <li><a href="#multithreading">Multithreading</a></li>
+            <li><a href="#async">Async Programming</a></li>
+            <li><a href="#delegates">Delegates & Events</a></li>
+            <li><a href="#linq">LINQ</a></li>
+            <li><a href="#annotations">Attributes</a></li>
+            <li><a href="#unit-testing">Unit Testing</a></li>
+            <li><a href="#exercises">Exercises</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <header>
+            <h1>Welcome to the C# Tutorial - CodeHeaven</h1>
+            <p>Learn C# from the basics to advanced concepts.</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="visible">
+            <h2>Introduction to C#</h2>
+            <p>C# is a modern, object-oriented programming language developed by Microsoft, widely used for developing desktop applications, web applications, and more.</p>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="installation">
+            <h2>C# Installation</h2>
+            <p>C# can be installed by downloading the .NET SDK from Microsoft's website.</p>
+            <ol>
+                <li>Download the .NET SDK from the official website.</li>
+                <li>Install the SDK and set up your development environment.</li>
+                <li>Use an IDE like Visual Studio or Visual Studio Code.</li>
+            </ol>
+        </section>
+
+        <!-- Syntax Section -->
+        <section id="syntax">
+            <h2>C# Syntax</h2>
+            <p>C# syntax is influenced by C and C++, with a focus on simplicity and safety.</p>
+            <pre><code>
+// C# Syntax Example
+using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello, CodeHeaven!");
+    }
+}
+            </code></pre>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables">
+            <h2>Variables in C#</h2>
+            <p>Variables in C# are declared with a specific data type.</p>
+            <pre><code>
+// Variables Example
+int x = 10;
+string y = "CodeHeaven";
+double z = 3.14;
+            </code></pre>
+        </section>
+
+        <!-- Data Types Section -->
+        <section id="datatypes">
+            <h2>C# Data Types</h2>
+            <p>C# supports various data types such as integers, floating-point numbers, characters, and more.</p>
+            <ul>
+                <li><b>int:</b> Integer numbers</li>
+                <li><b>float:</b> Floating-point numbers</li>
+                <li><b>char:</b> Single character</li>
+                <li><b>string:</b> Textual data</li>
+            </ul>
+        </section>
+
+        <!-- Operators Section -->
+        <section id="operators">
+            <h2>C# Operators</h2>
+            <p>Operators in C# are special symbols used to perform operations on variables and values.</p>
+            <ul>
+                <li><b>Arithmetic Operators:</b> +, -, *, /, %</li>
+                <li><b>Relational Operators:</b> ==, !=, >, <, >=, <=</li>
+                <li><b>Logical Operators:</b> &&, ||, !</li>
+                <li><b>Assignment Operators:</b> =, +=, -=, *=, /=, %=</li>
+                <li><b>Unary Operators:</b> ++, --</li>
+            </ul>
+        </section>
+
+        <!-- Control Flow Section -->
+        <section id="controlflow">
+            <h2>C# Control Flow Statements</h2>
+            <p>Control flow statements in C# determine the order in which statements are executed.</p>
+            <ul>
+                <li><b>if:</b> Conditional execution</li>
+                <li><b>else:</b> Alternate execution</li>
+                <li><b>switch:</b> Multiple conditions</li>
+                <li><b>for:</b> Loops with a counter</li>
+                <li><b>while:</b> Loops with a condition</li>
+                <li><b>do-while:</b> Loops at least once</li>
+                <li><b>foreach:</b> Loops through collections</li>
+            </ul>
+        </section>
+
+        <section id="loops">
+            <h2>Loops</h2>
+            <p>Learn about various loop constructs in C# like for, while, and foreach.</p>
+            <pre><code>
+        // Example of a for loop
+        for (int i = 0; i < 10; i++) {
+            Console.WriteLine(i);
+        }
+        
+        // Example of a while loop
+        int j = 0;
+        while (j < 10) {
+            Console.WriteLine(j);
+            j++;
+        }
+        
+        // Example of a foreach loop
+        int[] numbers = {1, 2, 3, 4, 5};
+        foreach (int number in numbers) {
+            Console.WriteLine(number);
+        }
+            </code></pre>
+        </section>
+        
+        <section id="methods">
+            <h2>Methods</h2>
+            <p>Understand how to define and use methods in C#.</p>
+            <pre><code>
+        public class Program {
+            public static void Main() {
+                Greet("CodeHeaven");
+            }
+        
+            static void Greet(string name) {
+                Console.WriteLine("Hello, " + name);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="classes-objects">
+            <h2>Classes & Objects</h2>
+            <p>Explore how to create and work with classes and objects in C#.</p>
+            <pre><code>
+        public class Person {
+            public string Name { get; set; }
+            public int Age { get; set; }
+        
+            public void Introduce() {
+                Console.WriteLine($"Hi, I'm {Name} and I'm {Age} years old.");
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Person person = new Person { Name = "Alice", Age = 30 };
+                person.Introduce();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="constructors">
+            <h2>Constructors</h2>
+            <p>Learn about constructors in C# and their role in initializing objects.</p>
+            <pre><code>
+        public class Car {
+            public string Model { get; set; }
+            public int Year { get; set; }
+        
+            public Car(string model, int year) {
+                Model = model;
+                Year = year;
+            }
+        
+            public void DisplayInfo() {
+                Console.WriteLine($"Model: {Model}, Year: {Year}");
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Car car = new Car("Toyota Corolla", 2022);
+                car.DisplayInfo();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="inheritance">
+            <h2>Inheritance</h2>
+            <p>Discover how inheritance allows one class to inherit from another.</p>
+            <pre><code>
+        public class Animal {
+            public void Eat() {
+                Console.WriteLine("Eating...");
+            }
+        }
+        
+        public class Dog : Animal {
+            public void Bark() {
+                Console.WriteLine("Barking...");
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Dog dog = new Dog();
+                dog.Eat();
+                dog.Bark();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="polymorphism">
+            <h2>Polymorphism</h2>
+            <p>Learn how polymorphism allows methods to do different things based on the object they are acting upon.</p>
+            <pre><code>
+        public class Animal {
+            public virtual void MakeSound() {
+                Console.WriteLine("Some generic animal sound");
+            }
+        }
+        
+        public class Dog : Animal {
+            public override void MakeSound() {
+                Console.WriteLine("Woof!");
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Animal myDog = new Dog();
+                myDog.MakeSound();
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="abstraction">
+            <h2>Abstraction</h2>
+            <p>Understand abstraction and how it hides implementation details from the user.</p>
+            <pre><code>
+        public abstract class Shape {
+            public abstract double Area();
+        }
+        
+        public class Rectangle : Shape {
+            public double Width { get; set; }
+            public double Height { get; set; }
+        
+            public override double Area() {
+                return Width * Height;
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Rectangle rect = new Rectangle { Width = 5, Height = 10 };
+                Console.WriteLine($"Area: {rect.Area()}");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="encapsulation">
+            <h2>Encapsulation</h2>
+            <p>Learn about encapsulation and how it protects data by bundling data and methods.</p>
+            <pre><code>
+        public class BankAccount {
+            private decimal balance;
+        
+            public void Deposit(decimal amount) {
+                if (amount > 0) {
+                    balance += amount;
+                }
+            }
+        
+            public decimal GetBalance() {
+                return balance;
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                BankAccount account = new BankAccount();
+                account.Deposit(1000);
+                Console.WriteLine($"Balance: {account.GetBalance()}");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="interfaces">
+            <h2>Interfaces</h2>
+            <p>Explore interfaces and how they define methods that must be implemented by classes.</p>
+            <pre><code>
+        public interface IShape {
+            double Area();
+        }
+        
+        public class Circle : IShape {
+            public double Radius { get; set; }
+        
+            public double Area() {
+                return Math.PI * Radius * Radius;
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Circle circle = new Circle { Radius = 5 };
+                Console.WriteLine($"Area: {circle.Area()}");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="namespaces">
+            <h2>Namespaces</h2>
+            <p>Understand namespaces and how they help organize code.</p>
+            <pre><code>
+        namespace MyApp {
+            public class Program {
+                public static void Main() {
+                    Console.WriteLine("Hello from MyApp namespace");
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="exception-handling">
+            <h2>Exception Handling</h2>
+            <p>Learn how to handle exceptions in C# using try, catch, and finally blocks.</p>
+            <pre><code>
+        public class Program {
+            public static void Main() {
+                try {
+                    int[] numbers = {1, 2, 3};
+                    Console.WriteLine(numbers[5]);
+                } catch (IndexOutOfRangeException ex) {
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                } finally {
+                    Console.WriteLine("Execution completed");
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="file-handling">
+            <h2>File Handling</h2>
+            <p>Learn how to handle files for reading and writing in C#.</p>
+            <pre><code>
+        using System.IO;
+        
+        public class Program {
+            public static void Main() {
+                string path = "example.txt";
+        
+                // Write to file
+                File.WriteAllText(path, "Hello, CodeHeaven!");
+        
+                // Read from file
+                string content = File.ReadAllText(path);
+                Console.WriteLine(content);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="collections">
+            <h2>Collections</h2>
+            <p>Explore different collection types such as arrays, lists, and dictionaries in C#.</p>
+            <pre><code>
+        using System.Collections.Generic;
+        
+        public class Program {
+            public static void Main() {
+                List<string> names = new List<string> {"Alice", "Bob", "Charlie"};
+                Dictionary<int, string> students = new Dictionary<int, string> {
+                    {1, "Alice"},
+                    {2, "Bob"},
+                    {3, "Charlie"}
+                };
+        
+                foreach (var name in names) {
+                    Console.WriteLine(name);
+                }
+        
+                foreach (var student in students) {
+                    Console.WriteLine($"ID: {student.Key}, Name: {student.Value}");
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="generics">
+            <h2>Generics</h2>
+            <p>Understand how generics allow you to create classes, methods, and interfaces with a placeholder for the data type.</p>
+            <pre><code>
+        public class Box<T> {
+            private T content;
+        
+            public void SetContent(T value) {
+                content = value;
+            }
+        
+            public T GetContent() {
+                return content;
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Box<int> intBox = new Box<int>();
+                intBox.SetContent(123);
+                Console.WriteLine(intBox.GetContent());
+        
+                Box<string> strBox = new Box<string>();
+                strBox.SetContent("Hello, Generics");
+                Console.WriteLine(strBox.GetContent());
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="multithreading">
+            <h2>Multithreading</h2>
+            <p>Learn how to perform multiple tasks simultaneously using multithreading in C#.</p>
+            <pre><code>
+        using System.Threading;
+        
+        public class Program {
+            public static void Main() {
+                Thread thread1 = new Thread(() => Console.WriteLine("Thread 1 is running"));
+                Thread thread2 = new Thread(() => Console.WriteLine("Thread 2 is running"));
+        
+                thread1.Start();
+                thread2.Start();
+        
+                thread1.Join();
+                thread2.Join();
+        
+                Console.WriteLine("All threads completed");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="async">
+            <h2>Async Programming</h2>
+            <p>Understand how to use async and await for asynchronous programming in C#.</p>
+            <pre><code>
+        using System;
+        using System.Threading.Tasks;
+        
+        public class Program {
+            public static async Task Main() {
+                Task task1 = Task1();
+                Task task2 = Task2();
+        
+                await Task.WhenAll(task1, task2);
+        
+                Console.WriteLine("All tasks completed");
+            }
+        
+            static async Task Task1() {
+                await Task.Delay(1000);
+                Console.WriteLine("Task 1 completed");
+            }
+        
+            static async Task Task2() {
+                await Task.Delay(2000);
+                Console.WriteLine("Task 2 completed");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="delegates">
+            <h2>Delegates & Events</h2>
+            <p>Learn about delegates and events, which are used for event handling and callback methods.</p>
+            <pre><code>
+        public delegate void Notify(string message);
+        
+        public class Publisher {
+            public event Notify OnNotify;
+        
+            public void NotifySubscribers(string message) {
+                OnNotify?.Invoke(message);
+            }
+        }
+        
+        public class Program {
+            public static void Main() {
+                Publisher publisher = new Publisher();
+                publisher.OnNotify += msg => Console.WriteLine("Received message: " + msg);
+        
+                publisher.NotifySubscribers("Hello, Delegates and Events");
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="linq">
+            <h2>LINQ</h2>
+            <p>Understand how Language Integrated Query (LINQ) can be used for querying collections in C#.</p>
+            <pre><code>
+        using System;
+        using System.Linq;
+        
+        public class Program {
+            public static void Main() {
+                int[] numbers = { 1, 2, 3, 4, 5 };
+        
+                var evenNumbers = from number in numbers
+                                  where number % 2 == 0
+                                  select number;
+        
+                foreach (var number in evenNumbers) {
+                    Console.WriteLine(number);
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="annotations">
+            <h2>Attributes</h2>
+            <p>Learn how to use attributes to add metadata to your code.</p>
+            <pre><code>
+        using System;
+        
+        [AttributeUsage(AttributeTargets.Class)]
+        public class DescriptionAttribute : Attribute {
+            public string Description { get; }
+            public DescriptionAttribute(string description) {
+                Description = description;
+            }
+        }
+        
+        [Description("This class performs mathematical operations")]
+        public class MathOperations {
+            // Methods here
+        }
+        
+        public class Program {
+            public static void Main() {
+                var attributes = typeof(MathOperations).GetCustomAttributes(typeof(DescriptionAttribute), false);
+                if (attributes.Length > 0) {
+                    var description = (DescriptionAttribute)attributes[0];
+                    Console.WriteLine($"Description: {description.Description}");
+                }
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="unit-testing">
+            <h2>Unit Testing</h2>
+            <p>Explore unit testing and how to write and run tests for your C# code.</p>
+            <pre><code>
+        using NUnit.Framework;
+        
+        [TestFixture]
+        public class MathTests {
+            [Test]
+            public void AddTest() {
+                int result = 2 + 3;
+                Assert.AreEqual(5, result);
+            }
+        }
+            </code></pre>
+        </section>
+        
+        <section id="exercises">
+            <h2>Exercises</h2>
+            <p>Practice your C# skills with the following exercises:</p>
+            <ul>
+                <li><strong>Loops:</strong> Write a program that prints the numbers from 1 to 100 using a loop. Modify the program to print only the even numbers.</li>
+                <li><strong>Methods:</strong> Create a method that takes two integers as parameters and returns their sum. Write a program that calls this method and displays the result.</li>
+                <li><strong>Classes & Objects:</strong> Design a class `Student` with properties for `Name`, `Age`, and `Grade`. Create an object of this class, set its properties, and display the information.</li>
+                <li><strong>Constructors:</strong> Implement a class `Book` with a constructor that initializes `Title` and `Author`. Create an object of this class and display the book's details.</li>
+                <li><strong>Inheritance:</strong> Create a base class `Animal` with a method `MakeSound()`. Derive a class `Cat` from `Animal` that overrides the `MakeSound()` method. Write a program that demonstrates polymorphism using these classes.</li>
+                <li><strong>Polymorphism:</strong> Define a base class `Shape` with a method `Area()`. Derive classes `Rectangle` and `Circle` from `Shape` and override the `Area()` method to calculate the area of the respective shapes. Write a program that uses these classes to compute areas.</li>
+                <li><strong>Abstraction:</strong> Create an abstract class `Appliance` with an abstract method `TurnOn()`. Derive classes `WashingMachine` and `Refrigerator` from `Appliance` and implement the `TurnOn()` method. Demonstrate the use of these classes.</li>
+                <li><strong>Encapsulation:</strong> Develop a class `Account` with private fields for balance and public methods for deposit and withdrawal. Write a program that uses this class to manage account transactions.</li>
+                <li><strong>Interfaces:</strong> Define an interface `IDriveable` with a method `Drive()`. Implement this interface in a class `Car` and write a program to demonstrate how the `Drive()` method is used.</li>
+                <li><strong>Namespaces:</strong> Create a namespace `Utilities` and within it, define a class `Helper` with a static method `CalculateSum()`. Write a program that uses this class and method.</li>
+                <li><strong>Exception Handling:</strong> Write a program that handles potential division by zero errors using try-catch blocks. Prompt the user to input two numbers and divide them, catching any exceptions that may occur.</li>
+                <li><strong>File Handling:</strong> Write a program that reads text from a file and counts the number of words. Ensure to handle any exceptions that may arise during file operations.</li>
+                <li><strong>Collections:</strong> Create a `List<int>` and add some numbers to it. Write a program to find the maximum and minimum values in the list.</li>
+                <li><strong>Generics:</strong> Implement a generic class `Pair<T>` that holds two values of type `T`. Write a program that creates instances of this class with different data types and demonstrates its usage.</li>
+                <li><strong>Multithreading:</strong> Write a program that creates and starts two threads. Each thread should print a message with a delay. Ensure the main thread waits for both threads to complete before exiting.</li>
+                <li><strong>Async Programming:</strong> Create an asynchronous method that performs a time-consuming operation (e.g., simulating a delay). Write a program that calls this method and waits for its completion.</li>
+                <li><strong>Delegates & Events:</strong> Implement a delegate for a method that processes a message. Create an event that triggers this delegate. Write a program that subscribes to the event and demonstrates its use.</li>
+                <li><strong>LINQ:</strong> Write a LINQ query to filter a list of integers to include only those greater than 10. Display the results.</li>
+                <li><strong>Attributes:</strong> Create a custom attribute `DeveloperInfo` that stores the name and date of a developer. Apply this attribute to a class and write a program that reads and displays the attribute information.</li>
+                <li><strong>Unit Testing:</strong> Write unit tests for a method that calculates the factorial of a number. Ensure to test edge cases and verify that the method behaves as expected.</li>
+            </ul>
+        </section>
+        
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 CodeHeaven. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Optional: Add smooth scroll to sections
+        document.querySelectorAll('.sidebar ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                document.querySelectorAll('section').forEach(sec => sec.classList.remove('visible'));
+                section.classList.add('visible');
+            });
+        });
+    </script>
+</body>
+</html>
